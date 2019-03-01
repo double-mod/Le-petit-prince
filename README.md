@@ -2,7 +2,7 @@
 目标游戏大赏的小王子改编游戏
 
 ## Team Member:
-`作为github学习的一部分，在自己的branch里面添加修改自己的信息，并上传申请合并master branch`
+`作为github学习的一部分，在自己的branch里面添加修改自己的信息，并上传申请pull request合并master branch`
 * 徐志鑫：programmer
 
 ## Do List
