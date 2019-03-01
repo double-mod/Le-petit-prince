@@ -11,4 +11,4 @@
   * [slack](https://slack.com/)：沟通与项目管理整合
   * [trello](https://trello.com/)：进度管理
   * [git](https://git-scm.com/) & github：版本管理 [git教程](https://blog.csdn.net/mr_chungh/article/details/80815377)
-  
+  let try
