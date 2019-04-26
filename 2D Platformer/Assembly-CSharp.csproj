@@ -63,6 +63,9 @@
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\FSMSystem.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\star.cs" />
+    <Compile Include="Assets\Scripts\StarDust.cs" />
+    <Compile Include="Assets\Scripts\untouchable.cs" />
     <Reference Include="Cinemachine">
       <HintPath>C:/Users/双人余/Desktop/unity proto/2D Platformer/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>

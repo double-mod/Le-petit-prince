@@ -18,9 +18,9 @@ TagManager:
   - Player
   - Background
   - Enemy
-  - 
-  - 
-  - 
+  - unseen
+  - untouchable
+  - star
   - 
   - 
   - 

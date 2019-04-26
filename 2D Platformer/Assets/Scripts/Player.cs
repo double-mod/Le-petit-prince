@@ -210,7 +210,9 @@ public class Player : MonoBehaviour
             return true;
         }
 
-        if (!myFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (!myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"))
+            && !myFeet.IsTouchingLayers(LayerMask.GetMask("unseen"))
+            && !myFeet.IsTouchingLayers(LayerMask.GetMask("untouchable")))
         {
             stateMachine.StateSwitch("Air");
             return true;
@@ -262,7 +264,9 @@ public class Player : MonoBehaviour
     {
 
         Vector2 dashVelocity = aimDir.normalized * DashSpeed;
-        if (Input.GetButtonDown("Jump") && myFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (Input.GetButtonDown("Jump") && myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"))
+            || myFeet.IsTouchingLayers(LayerMask.GetMask("unseen"))
+            || myFeet.IsTouchingLayers(LayerMask.GetMask("untouchable")))
         {
             stateMachine.StateSwitch("SuperJump");
             dashVelocity.y = jumpHeight * 0.7f;
@@ -293,7 +297,9 @@ public class Player : MonoBehaviour
         myRigidbody.velocity = playerVelocity;
 
 
-        if (stateMachine.StateTimer > 0.2f && myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"))) // check landing
+        if (stateMachine.StateTimer > 0.2f && myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"))
+            || myFeet.IsTouchingLayers(LayerMask.GetMask("unseen"))
+            || myFeet.IsTouchingLayers(LayerMask.GetMask("untouchable"))) // check landing
         {
             if (PlayerHasHorizontalSpeed())
             {
@@ -310,7 +316,9 @@ public class Player : MonoBehaviour
 
     private bool CheckLanding()
     {
-        if (myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"))) // check landing
+        if (myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"))
+             || myFeet.IsTouchingLayers(LayerMask.GetMask("unseen"))
+            || myFeet.IsTouchingLayers(LayerMask.GetMask("untouchable"))) // check landing
         {
             if (PlayerHasHorizontalSpeed())
             {
