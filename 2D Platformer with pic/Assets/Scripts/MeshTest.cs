@@ -51,11 +51,19 @@ public class MeshTest : MonoBehaviour
         uvArray = new Vector2[SmoothnessOfLighting + 1];
 
         SetLayerMaskValue(LayerMask);
+
+        Vector3 min = new Vector3(0f, 0f, 0f);
+
+        Vector3 max = new Vector3(1000f,1000f, 1000f);
+
+        mesh.bounds.SetMinMax(min, max);
     }
 
 
     void Update()
     {
+        SetLayerMaskValue(LayerMask);
+
         UpdateColor();
 
         GenerateMesh();
@@ -67,7 +75,7 @@ public class MeshTest : MonoBehaviour
 
         for (int i = 0; i < layerMask.Length; i++)
         {
-            layerMaskValue = layerMask[i].value | layerMaskValue;
+            layerMaskValue = layerMask[i].value;
         }
 
     }

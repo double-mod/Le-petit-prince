@@ -41,7 +41,7 @@ public class untouchable : MonoBehaviour
 
     private void OnTriggerStay2D()
     {
-        if (myRigidBody2D.IsTouchingLayers(LayerMask.GetMask("star"))　&& mySpriteRenderer.color.a<20f)
+        if (myRigidBody2D.IsTouchingLayers(LayerMask.GetMask("star"))　&& mySpriteRenderer.color.a<1.0f)
             mySpriteRenderer.color = new Vector4(mySpriteRenderer.color.r, mySpriteRenderer.color.g, mySpriteRenderer.color.b, mySpriteRenderer.color.a + 0.5f * Time.deltaTime);
     }
 

@@ -13,13 +13,17 @@ public class star : MonoBehaviour
     bool isCircle = true;
 
     Rigidbody2D myRigidBody2D;
+    BoxCollider2D myBoxCollider2D;
     Coroutine deleteObj;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidBody2D = GetComponent<Rigidbody2D>();
+        myBoxCollider2D = GetComponent<BoxCollider2D>();
+        myBoxCollider2D.enabled = false;
         StartCoroutine(littlePause());
+        StartCoroutine(colliderEnable());
         deleteObj = StartCoroutine(DeleteObjIn3());
     }
 
@@ -66,5 +70,11 @@ public class star : MonoBehaviour
             myRigidBody2D.velocity *= UnityEngine.Random.Range(0,starSpeed_x);
         else  
             myRigidBody2D.velocity *=starSpeed_x;
+    }
+
+    IEnumerator colliderEnable()
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(0f,0.5f));
+        myBoxCollider2D.enabled = true;
     }
 }
