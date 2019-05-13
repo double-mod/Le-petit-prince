@@ -33,12 +33,12 @@ public class background : MonoBehaviour
         {
             case type.cloud:
                 if(!isFollow)
-                    transform.position = new Vector2(player.transform.position.x, transform.position.y);
+                    transform.position = new Vector3(player.transform.position.x, transform.position.y,10f);
                 else
-                    transform.position = new Vector2(player.transform.position.x, player.transform.position.y-distance);
+                    transform.position = new Vector3(player.transform.position.x, player.transform.position.y-distance,10f);
                 break;
             case type.sky:
-                transform.position = new Vector2(player.transform.position.x, player.transform.position.y);
+                transform.position = new Vector3(player.transform.position.x, player.transform.position.y,10f);
                 break;
         }
 

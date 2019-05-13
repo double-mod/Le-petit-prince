@@ -78,14 +78,14 @@ public class movePattern : MonoBehaviour
             shiftFlg = !shiftFlg;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (this.GetComponent<Rigidbody2D>().IsTouchingLayers(LayerMask.GetMask("foreground")))
-        {
-            spd = -spd;
-        }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (this.GetComponent<Rigidbody2D>().IsTouchingLayers(LayerMask.GetMask("foreground")))
+    //    {
+    //        spd = -spd;
+    //    }
            
-    }
+    //}
 
     private void distanceCheck()
     {

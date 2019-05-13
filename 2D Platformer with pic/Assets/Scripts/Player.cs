@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 
     // State
     int superMode = 0;
+    bool canDash = true;
 
     // Cached component references
     Rigidbody2D myRigidbody;
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
 
     string state;
     string stateNext;
+    string preState;
     float stateTimer;
     bool stateNew;
 
@@ -56,6 +58,7 @@ public class Player : MonoBehaviour
         //
         // stateMachine.StateInit("Stand");
         state = "Stand";
+        preState = state;
     }
 
     // Update is called once per frame
@@ -92,6 +95,7 @@ public class Player : MonoBehaviour
     {
         if (state != stateNext && stateNext != null)
         {
+            preState = state;
             state = stateNext;
             stateTimer = 0f;
             stateNew = true;
@@ -213,7 +217,7 @@ public class Player : MonoBehaviour
 
         if (myRigidbody.velocity.y > 10f)
         {
-            if (!Input.GetButton("Jump"))
+            if (!Input.GetButton("Jump") || preState == "Dash")
             {
                 playerVelocity.y *= jumpReleaseImpression;
             }
@@ -273,8 +277,14 @@ public class Player : MonoBehaviour
 
     private bool CheckDash()
     {
+        if (!canDash)
+        {
+            return false;
+        }
+
         if (Input.GetButtonDown("Dash"))
         {
+            canDash = false;
             float controlH = Input.GetAxis("Horizontal"); // -1 ~ +1
             float controlV = Input.GetAxis("Vertical"); // -1 ~ +1
                 
@@ -355,6 +365,7 @@ public class Player : MonoBehaviour
              || myFeet.IsTouchingLayers(LayerMask.GetMask("unseen"))
             || myFeet.IsTouchingLayers(LayerMask.GetMask("untouchable"))) // check landing
         {
+            canDash = true;
             if (PlayerHasHorizontalSpeed())
             {
                 stateNext = "Walk";

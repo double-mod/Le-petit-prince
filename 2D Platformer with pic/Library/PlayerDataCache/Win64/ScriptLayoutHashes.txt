@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/双人余/Desktop/新建文件夹/2D Platformer.exe
+C:/Users/Wyi/Desktop/2D Platformer.exe
 SceneListBegin?
 Assets/Scenes/Game.unity
 SceneListEnd?
