@@ -23,7 +23,7 @@ public class untouchable : MonoBehaviour
     {
         if (cnt <= 0)
             myCollider2D.isTrigger = true;
-        Debug.Log(cnt);
+        //Debug.Log(cnt);
         if (mySpriteRenderer.color.a >= 0)
             mySpriteRenderer.color = new Vector4(mySpriteRenderer.color.r, mySpriteRenderer.color.g, mySpriteRenderer.color.b, mySpriteRenderer.color.a - 1f * Time.deltaTime);
         //move();

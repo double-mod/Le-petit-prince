@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     Light myLight;
     // FSMSystem stateMachine;
     SpriteRenderer mySprite;
+    Energy energy;
 
     string state;
     string stateNext;
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
         myFeet = GetComponent<BoxCollider2D>();
         myLight = GetComponentInChildren<Light>();
         mySprite = GetComponent<SpriteRenderer>();
+        energy = GetComponent<Energy>();
 
         // stateMachine = GetComponent<FSMSystem>();
         // stateMachine.StateCreate("Stand", Stand);
@@ -89,6 +91,7 @@ public class Player : MonoBehaviour
         CheckMode();
         CheckLight();
 
+        // energy.energyIncrease(25);
     }
 
     private void LateUpdate()
@@ -282,7 +285,7 @@ public class Player : MonoBehaviour
             return false;
         }
 
-        if (Input.GetButtonDown("Dash"))
+        if (Input.GetButtonDown("Dash") && energy.energyUse())
         {
             canDash = false;
             float controlH = Input.GetAxis("Horizontal"); // -1 ~ +1
@@ -295,7 +298,7 @@ public class Player : MonoBehaviour
                 aimDir.x = transform.localScale.x;
             }
 
-            energyPoint--;
+            // energyPoint--;
             myLight.spotAngle = 190f;
             stateNext = "Dash";
             return true;

@@ -46,6 +46,18 @@ public class Energy : MonoBehaviour
             if ((EnergyStat.currentEnergy += rate) >= 100)
                 EnergyStat.currentCage += 1;     
     }
+    public bool energyUse ()
+    {
+        if (EnergyStat.currentCage < 1)
+        {
+            return false;
+        }
+        else
+        {
+            EnergyStat.currentCage--;
+            return true;
+        }
+    }
 
     private void energyCheck()
     {
