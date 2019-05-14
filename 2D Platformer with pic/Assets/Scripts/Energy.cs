@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Energy : MonoBehaviour
 {
-
-    public enum EnergyType
+    public struct energyStat
     {
-        Luminous,
-        Fog
+        public int currentCage;
+        public int currentEnergy;
     }
 
-    public EnergyType energyType;
 
     [SerializeField]
     private int cageCnt = 3;
@@ -22,45 +20,56 @@ public class Energy : MonoBehaviour
     [SerializeField]
     private int energyPerCage=100;
 
-    private int currentCage = 0;
-
-    private int currentEnergy = 0;
+    private energyStat EnergyStat;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        EnergyStat.currentCage = 0;
+        EnergyStat.currentEnergy = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch(energyType)
+        energyCheck();
+    }
+
+    public energyStat getThisEnergy()
+    {
+        return EnergyStat;
+    }
+
+    public void energyIncrease(int rate)
+    {
+        if (EnergyStat.currentCage < 1)
+            if ((EnergyStat.currentEnergy += rate) >= 100)
+                EnergyStat.currentCage += 1;     
+    }
+
+    private void energyCheck()
+    {
+        switch (this.GetComponent<EventSystem>().getEventTYpe())
         {
-            case EnergyType.Luminous:
-                if (this.GetComponent<EventSystem>().checkEvent())
+            case EventSystem.eventType.LIGHT:
+                EnergyStat.currentEnergy += chargePerFrame;
+                if (EnergyStat.currentEnergy >= energyPerCage)
                 {
-                    currentEnergy += chargePerFrame;
-                    if (currentEnergy >= energyPerCage)
-                    {
-                        currentEnergy = 0;
-                        if (currentCage <= cageCnt) currentCage++;
-                    }
+                    EnergyStat.currentEnergy = 0;
+                    if (EnergyStat.currentCage < cageCnt) EnergyStat.currentCage++;
                 }
                 break;
-            case EnergyType.Fog:
-                if (this.GetComponent<EventSystem>().checkEvent())
+            case EventSystem.eventType.FOG:
+                EnergyStat.currentEnergy -= chargePerFrame;
+                if (EnergyStat.currentEnergy < 0)
                 {
-                    currentEnergy -= chargePerFrame;
-                    if (currentEnergy < 0)
-                    {
-                        currentEnergy = 100;
-                        if (currentCage > 0) currentCage--;
-                    }
+                    EnergyStat.currentEnergy = 100;
+                    if (EnergyStat.currentCage > 0) EnergyStat.currentCage--;
                 }
                 break;
         }
-
-        
+        Debug.Log(EnergyStat.currentCage);
+        Debug.Log(EnergyStat.currentEnergy);
     }
+
 }

@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class EventSystem : MonoBehaviour
 {
+    public enum eventType
+    {
+        NONE=0,
+        LIGHT=1<<0,
+        FOG=1<<1,
+        BOTH=LIGHT|FOG
+    }
+
     public GameObject[] eventItem;
 
     public LayerMask[] LayerMask;
@@ -13,6 +21,8 @@ public class EventSystem : MonoBehaviour
     private Vector3 direction;
 
     private float Range;
+
+    private eventType EventType=eventType.NONE;
 
     // Start is called before the first frame update
     void Start()
@@ -34,29 +44,43 @@ public class EventSystem : MonoBehaviour
 
     }
 
-    public bool checkEvent()
+    public void checkEvent()
     {
-        for(int i=0;i<eventItem.Length;i++)
-        {
-            direction = eventItem[i].transform.position - transform.position;
-            float distance = Vector3.Distance(eventItem[i].transform.position, transform.position);
-            Range = eventItem[i].GetComponent<MeshTest>().retRange();
-            if (Physics2D.Raycast(transform.position, direction, Range, layerMaskValue))
-            {
-                Debug.Log("false");
-                return false;
-            }
-        }
+        //for(int i=0;i<eventItem.Length;i++)
+        //{
+        //    direction = eventItem[i].transform.position - transform.position;
+        //    float distance = Vector3.Distance(eventItem[i].transform.position, transform.position);
+        //    Range = eventItem[i].GetComponent<meshTest>().retRange();
+        //    //when hit before hit happen
+        //    if (Physics2D.Raycast(transform.position, direction, Range, layerMaskValue)) 
+        //    {
+        //        Debug.Log("false");
+        //    }
+        //}
+        
+        //refresh the data every frame
+        EventType = eventType.NONE;
         for(int i = 0; i < eventItem.Length; i++)
         {
+            //when hit happen
             float distance = Vector3.Distance(eventItem[i].transform.position, transform.position);
             Range = eventItem[i].GetComponent<MeshTest>().retRange();
             if (Range>=distance)
             {
+                if ((2<<eventItem[i].layer) == UnityEngine.LayerMask.GetMask("fog"))
+                    EventType |= eventType.LIGHT;
+                else if ((2<<eventItem[i].layer) == UnityEngine.LayerMask.GetMask("fog"))
+                    EventType |= eventType.FOG;
                 Debug.Log("true");
-                return true;
             }
         }
-        return true;
+        Debug.Log(EventType);
+        //when hit do not happen
+       // Debug.Log("false");
+    }
+
+    public eventType getEventTYpe()
+    {
+        return EventType;
     }
 }
