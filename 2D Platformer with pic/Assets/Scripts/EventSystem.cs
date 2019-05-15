@@ -67,9 +67,9 @@ public class EventSystem : MonoBehaviour
             Range = eventItem[i].GetComponent<MeshTest>().retRange();
             if (Range>=distance)
             {
-                if ((2<<eventItem[i].layer) == UnityEngine.LayerMask.GetMask("fog"))
+                if ((1<<eventItem[i].layer) == UnityEngine.LayerMask.GetMask("light"))
                     EventType |= eventType.LIGHT;
-                else if ((2<<eventItem[i].layer) == UnityEngine.LayerMask.GetMask("fog"))
+                else if ((1<<eventItem[i].layer) == UnityEngine.LayerMask.GetMask("fog"))
                     EventType |= eventType.FOG;
                 Debug.Log("true");
             }

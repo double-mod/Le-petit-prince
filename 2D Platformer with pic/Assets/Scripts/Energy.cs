@@ -18,6 +18,9 @@ public class Energy : MonoBehaviour
     private int chargePerFrame=10;
 
     [SerializeField]
+    private int decreasePerFrame = 5;
+
+    [SerializeField]
     private int energyPerCage=100;
 
     private energyStat EnergyStat;
@@ -72,11 +75,15 @@ public class Energy : MonoBehaviour
                 }
                 break;
             case EventSystem.eventType.FOG:
-                EnergyStat.currentEnergy -= chargePerFrame;
-                if (EnergyStat.currentEnergy < 0)
+                if(EnergyStat.currentEnergy>0)
+                    EnergyStat.currentEnergy -= decreasePerFrame;
+                if (EnergyStat.currentEnergy <= 0)
                 {
-                    EnergyStat.currentEnergy = 100;
-                    if (EnergyStat.currentCage > 0) EnergyStat.currentCage--;
+                    if (EnergyStat.currentCage > 0)
+                    {
+                        EnergyStat.currentCage--;
+                        EnergyStat.currentEnergy = 100;
+                    }
                 }
                 break;
         }

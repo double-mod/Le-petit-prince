@@ -287,6 +287,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Dash") && energy.energyUse())
         {
+            this.GetComponent<StarDust>().boost();
             canDash = false;
             float controlH = Input.GetAxis("Horizontal"); // -1 ~ +1
             float controlV = Input.GetAxis("Vertical"); // -1 ~ +1

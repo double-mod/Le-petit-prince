@@ -29,12 +29,12 @@ public class StarDust : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKeyDown("j"))
-        {
-            //StarDusting();
-            //boost();
-            StartCoroutine(Boost());
-        }
+        //if(Input.GetKeyDown("j"))
+        //{
+        //    //StarDusting();
+        //    boost();
+        //    //StartCoroutine(Boost());
+        //}
         
     }
 
@@ -56,7 +56,7 @@ public class StarDust : MonoBehaviour
     //}
 
 
-    private void boost()
+    public void boost()
     {
         for(float theta=0;theta<360;theta+=10)
         {
@@ -68,10 +68,9 @@ public class StarDust : MonoBehaviour
         }
     }
 
-    IEnumerator Boost()
-    {
-        boost();
-        yield return new WaitForSeconds(0.1f);
-        boost();
-    }
+    //IEnumerator Boost()
+    //{
+    //    boost();
+    //    yield return new WaitForSeconds(0.1f);
+    //}
 }
