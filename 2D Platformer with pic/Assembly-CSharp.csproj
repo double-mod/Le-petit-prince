@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Energy.cs" />
     <Compile Include="Assets\Scripts\EventSystem.cs" />
+    <Compile Include="Assets\Scripts\followBlock.cs" />
     <Compile Include="Assets\Scripts\FSMSystem.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\MeshTest.cs" />
