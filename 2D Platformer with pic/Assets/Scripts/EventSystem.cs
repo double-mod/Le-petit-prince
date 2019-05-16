@@ -87,9 +87,9 @@ public class EventSystem : MonoBehaviour
                     EventType |= eventType.LIGHT;
                 else if ((1<<eventItem[i].layer) == UnityEngine.LayerMask.GetMask("fog") && eventItem[i].activeInHierarchy == true)
                     EventType |= eventType.FOG;   
-                Debug.Log("true");
+                //Debug.Log("true");
             }
-            bool boo = angle < ((endAngle - startAngle) / 2);
+            bool boo = Physics2D.Raycast(transform.position, direction, Range, layerMaskValue);
             //Debug.Log(angle);
             Debug.Log(boo);
             //Debug.Log(startAngle);

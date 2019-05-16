@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] [Range(1f, 50f)] float jumpHeight = 10f;
     [SerializeField] [Range(0f, 1f)] float jumpReleaseImpression = 0.4f;
     [SerializeField] [Range(0f, 50f)] float DashSpeed = 15f;
+    [SerializeField] [Range(0f, 50f)] float DragSpd = 2.5f;
 
 
     [SerializeField] int energyPoint = 0;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     // State
     int superMode = 0;
     bool canDash = true;
+    bool FlipOn = true;
 
     // Cached component references
     Rigidbody2D myRigidbody;
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
     string preState;
     float stateTimer;
     bool stateNew;
+    Vector2 prevVelocity;
 
     // Message then methods
     void Start()
@@ -66,7 +69,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        prevVelocity = myRigidbody.velocity;
        // stateMachine.StateExecute();
 
         switch(state)
@@ -172,6 +175,10 @@ public class Player : MonoBehaviour
             myAnimator.SetBool("Running", true);
         }
 
+        if (FlipOn == false)
+            runSpeed = DragSpd;
+        else
+            runSpeed = 7.8f;
 
         float controlThrow = Input.GetAxis("Horizontal"); // -1 ~ +1
         Vector2 playerVelocity = new Vector2(controlThrow * runSpeed, myRigidbody.velocity.y);
@@ -390,9 +397,26 @@ public class Player : MonoBehaviour
 
     private void FlipSprite()
     {
-        if (PlayerHasHorizontalSpeed())
+        if (state != "Walk")
+            SetFlipStat(true);
+        if (PlayerHasHorizontalSpeed()&&FlipOn)
         {
             transform.localScale = new Vector2(Mathf.Sign(myRigidbody.velocity.x), transform.localScale.y);
         }
+    }
+
+    public void SetFlipStat(bool stat)
+    {
+        FlipOn = stat;
+    }
+
+    public Vector2 GetPrevVelocity()
+    {
+        return prevVelocity;
+    }
+
+    public string getState()
+    {
+        return state;
     }
 }
