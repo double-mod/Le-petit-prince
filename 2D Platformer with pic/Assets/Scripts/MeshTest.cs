@@ -20,6 +20,14 @@ public class MeshTest : MonoBehaviour
     public int SmoothnessOfLighting = 15;
     //layer need to check
     public LayerMask[] LayerMask;
+    //sector start
+    [Range(0, 1)]
+    public float sectorStart = 0f;
+    //sector end
+    [Range(0, 1)]
+    public float sectorEnd = 1f;
+
+    public float startAngle,endAngle;
     //layer mask value
     private int layerMaskValue;
 
@@ -67,6 +75,9 @@ public class MeshTest : MonoBehaviour
         UpdateColor();
 
         GenerateMesh();
+
+        startAngle = sectorStart * 360 ;
+        endAngle = sectorEnd * 360;
     }
 
     private void SetLayerMaskValue(LayerMask[] layerMask)
@@ -111,12 +122,14 @@ public class MeshTest : MonoBehaviour
     {
 
         vectorsOfLightMesh[0] = Vector3.zero;
-
-        for (int i = SmoothnessOfLighting; i > 0; i--)
+        int cnt =0, limit=0;
+        cnt = (int)(SmoothnessOfLighting * sectorEnd);
+        limit = (int)(SmoothnessOfLighting * sectorStart);
+        for (; cnt > limit; cnt--)
 
         {
 
-            direction = new Vector3(Mathf.Cos(Mathf.Deg2Rad * i * 360 / SmoothnessOfLighting), Mathf.Sin(Mathf.Deg2Rad * i * 360 / SmoothnessOfLighting), 0);
+            direction = new Vector3(Mathf.Cos(Mathf.Deg2Rad * cnt * 360 / SmoothnessOfLighting), Mathf.Sin(Mathf.Deg2Rad * cnt * 360 / SmoothnessOfLighting), 0);
 
             direction = direction * Range;
 
@@ -128,7 +141,7 @@ public class MeshTest : MonoBehaviour
 
                 hit = Physics2D.Raycast(transform.position, direction, Range, layerMaskValue);
 
-                vectorsOfLightMesh[SmoothnessOfLighting - i + 1] = (Vector3)hit.point + Vector3.forward * transform.position.z - transform.position;
+                vectorsOfLightMesh[SmoothnessOfLighting - cnt + 1] = (Vector3)hit.point + Vector3.forward * transform.position.z - transform.position;
 
             }
 
@@ -137,7 +150,7 @@ public class MeshTest : MonoBehaviour
             {
                 Debug.DrawLine(transform.position, transform.position + direction, Color.white);
 
-                vectorsOfLightMesh[SmoothnessOfLighting - i + 1] = direction;
+                vectorsOfLightMesh[SmoothnessOfLighting - cnt + 1] = direction;
             }
 
         }

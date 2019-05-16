@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\MeshTest.cs" />
     <Compile Include="Assets\Scripts\movePattern.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\SinMove.cs" />
     <Compile Include="Assets\Scripts\SMath.cs" />
     <Compile Include="Assets\Scripts\star.cs" />
     <Compile Include="Assets\Scripts\StarDust.cs" />

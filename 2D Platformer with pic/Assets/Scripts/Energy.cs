@@ -67,7 +67,8 @@ public class Energy : MonoBehaviour
         switch (this.GetComponent<EventSystem>().getEventTYpe())
         {
             case EventSystem.eventType.LIGHT:
-                EnergyStat.currentEnergy += chargePerFrame;
+                if(EnergyStat.currentCage<cageCnt)
+                    EnergyStat.currentEnergy += chargePerFrame;
                 if (EnergyStat.currentEnergy >= energyPerCage)
                 {
                     EnergyStat.currentEnergy = 0;
@@ -87,8 +88,8 @@ public class Energy : MonoBehaviour
                 }
                 break;
         }
-        Debug.Log(EnergyStat.currentCage);
-        Debug.Log(EnergyStat.currentEnergy);
+        //Debug.Log(EnergyStat.currentCage);
+        //Debug.Log(EnergyStat.currentEnergy);
     }
 
 }
