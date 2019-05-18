@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpringBed : MonoBehaviour
 {
     public float boundRate=2f;
+    public float maxVelocity_x=20;
+    public float maxVelocity_y=20;
 
     private Rigidbody2D myRigidbody2D;
     // Start is called before the first frame update
@@ -25,6 +27,16 @@ public class SpringBed : MonoBehaviour
         {
             Vector2 velocity = new Vector2(-collision.gameObject.GetComponent<Player>().GetPrevVelocity().x, -collision.gameObject.GetComponent<Player>().GetPrevVelocity().y);
             // var velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
+            if (velocity.x * boundRate < maxVelocity_x)
+                velocity.x *= boundRate;
+            else
+                velocity.x = maxVelocity_x;
+
+            if (velocity.y * boundRate < maxVelocity_y)
+                velocity.y *= boundRate;
+            else
+                velocity.y = maxVelocity_y;
+
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity.x * boundRate, velocity.y * boundRate);
             //StartCoroutine(Bound(collision));
         }

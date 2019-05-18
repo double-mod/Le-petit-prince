@@ -43,7 +43,7 @@ public class star : MonoBehaviour
         {
             StopCoroutine(deleteObj);
             StartCoroutine(DeleteObjIn2());
-            myRigidBody2D.velocity = new Vector2(myRigidBody2D.velocity.x / 20, myRigidBody2D.velocity.y / 20);
+            myRigidBody2D.velocity = new Vector2(myRigidBody2D.velocity.x / 40, myRigidBody2D.velocity.y / 40);
             myRigidBody2D.gravityScale = 0f;
         }
 

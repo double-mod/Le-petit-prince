@@ -77,6 +77,8 @@
     <Compile Include="Assets\Scripts\SpringBed.cs" />
     <Compile Include="Assets\Scripts\star.cs" />
     <Compile Include="Assets\Scripts\StarDust.cs" />
+    <Compile Include="Assets\Scripts\TimeChange.cs" />
+    <Compile Include="Assets\Scripts\Unseen.cs" />
     <Compile Include="Assets\Scripts\untouchable.cs" />
     <Compile Include="Assets\Scripts\WishBottle.cs" />
     <None Include="Assets\Shader\wrap.shader" />

@@ -24,7 +24,7 @@ public class untouchable : MonoBehaviour
         if (cnt <= 0)
             myCollider2D.isTrigger = true;
         //Debug.Log(cnt);
-        if (mySpriteRenderer.color.a >= 0)
+        if (mySpriteRenderer.color.a >= 0.1)
             mySpriteRenderer.color = new Vector4(mySpriteRenderer.color.r, mySpriteRenderer.color.g, mySpriteRenderer.color.b, mySpriteRenderer.color.a - 1f * Time.deltaTime);
         //move();
     }
@@ -42,7 +42,7 @@ public class untouchable : MonoBehaviour
     private void OnTriggerStay2D()
     {
         if (myRigidBody2D.IsTouchingLayers(LayerMask.GetMask("star"))　&& mySpriteRenderer.color.a<1.0f)
-            mySpriteRenderer.color = new Vector4(mySpriteRenderer.color.r, mySpriteRenderer.color.g, mySpriteRenderer.color.b, mySpriteRenderer.color.a + 0.5f * Time.deltaTime);
+            mySpriteRenderer.color = new Vector4(mySpriteRenderer.color.r, mySpriteRenderer.color.g, mySpriteRenderer.color.b, mySpriteRenderer.color.a + 1.2f * Time.deltaTime);
     }
 
     private void move()
