@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
         CheckMode();
         CheckLight();
 
-        // energy.energyIncrease(25);
+         energy.energyIncrease(25);
     }
 
     private void LateUpdate()
