@@ -78,9 +78,12 @@
     <Compile Include="Assets\Scripts\star.cs" />
     <Compile Include="Assets\Scripts\StarDust.cs" />
     <Compile Include="Assets\Scripts\TimeChange.cs" />
+    <Compile Include="Assets\Scripts\Title\TitleAnimationPlayer.cs" />
+    <Compile Include="Assets\Scripts\Title\TitleControl.cs" />
     <Compile Include="Assets\Scripts\Unseen.cs" />
     <Compile Include="Assets\Scripts\untouchable.cs" />
     <Compile Include="Assets\Scripts\WishBottle.cs" />
+    <Compile Include="Assets\StageSelector.cs" />
     <None Include="Assets\Shader\wrap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
