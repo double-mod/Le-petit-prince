@@ -16,9 +16,12 @@ public class followBlock : MonoBehaviour
         
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.transform.parent = transform;
+        if (this.GetComponent<Rigidbody2D>().IsTouchingLayers(LayerMask.GetMask("Player")))
+        {
+            collision.gameObject.transform.parent = transform;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
