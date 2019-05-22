@@ -7,9 +7,9 @@ using UnityEngine.Events;
 public class TitleControl : MonoBehaviour
 {
     Animator animator;
-    [SerializeField] GameObject follower;
-    [SerializeField] GameObject follower2;
-    [SerializeField] GameObject follower3;
+    [SerializeField] GameObject follower=null;
+    [SerializeField] GameObject follower2 = null;
+    [SerializeField] GameObject follower3 = null;
 
     [SerializeField] Button[] nextSelectButton;
     [SerializeField] Button slefButton;

@@ -58,7 +58,7 @@ public class StarDust : MonoBehaviour
 
     public void boost()
     {
-        for(float theta=0;theta<360;theta+=10)
+        for(float theta=0;theta<360;theta+=(360/starAmount))
         {
             GameObject starDust = Instantiate(starDustPrefab, transform.position, Quaternion.identity) as GameObject;
             Vector2 direction = new Vector2(starStartingSpd.x, starStartingSpd.y);

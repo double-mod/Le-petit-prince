@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class untouchable : MonoBehaviour
 {
+    public bool moveByStar = false;
+
     Rigidbody2D myRigidBody2D;
     BoxCollider2D myCollider2D;
     SpriteRenderer mySpriteRenderer;
@@ -26,7 +28,7 @@ public class untouchable : MonoBehaviour
         //Debug.Log(cnt);
         if (mySpriteRenderer.color.a >= 0.1)
             mySpriteRenderer.color = new Vector4(mySpriteRenderer.color.r, mySpriteRenderer.color.g, mySpriteRenderer.color.b, mySpriteRenderer.color.a - 1f * Time.deltaTime);
-        //move();
+        move();
     }
 
     private void OnTriggerEnter2D()
@@ -47,8 +49,11 @@ public class untouchable : MonoBehaviour
 
     private void move()
     {
-        if(cnt>0)
-             transform.position = new Vector3(transform.position.x - 0.5f*Time.deltaTime, transform.position.y, transform.position.y);
+        if (cnt > 0 && moveByStar)
+            GetComponent<movePattern>().enabled = true;
+        else
+            GetComponent<movePattern>().enabled = false;
+        //transform.position = new Vector3(transform.position.x - 0.5f*Time.deltaTime, transform.position.y, transform.position.y);
     }
 
     IEnumerator go()
@@ -56,4 +61,6 @@ public class untouchable : MonoBehaviour
         yield return new WaitForSeconds(2f);
         cnt--;
     }
+
+
 }

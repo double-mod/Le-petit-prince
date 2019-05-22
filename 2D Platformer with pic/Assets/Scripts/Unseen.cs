@@ -28,11 +28,28 @@ public class Unseen : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("Player"))&&collision.gameObject.GetComponent<Player>().getState()=="Walk")
+        {
+            StartCoroutine(visibleForWhile());
+        }
+    }
+
+    private void OnTriggerEnter2D()
+    {
+        if (myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("star")))
+        {
+            StartCoroutine(visibleForWhile());
+        }
+    }
+
     IEnumerator visibleForWhile()
     {
         for(int cnt=0;cnt<3;cnt++)
         {
-            mySpriteRenderer.color = new Vector4(mySpriteRenderer.color.r, mySpriteRenderer.color.g, mySpriteRenderer.color.b, mySpriteRenderer.color.a + 4f * Time.deltaTime);
+            if(mySpriteRenderer.color.a<0.15f)
+                 mySpriteRenderer.color = new Vector4(mySpriteRenderer.color.r, mySpriteRenderer.color.g, mySpriteRenderer.color.b, mySpriteRenderer.color.a + 4f * Time.deltaTime);
             yield return new WaitForSeconds(0.1f);
         }
 
