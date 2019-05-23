@@ -64,8 +64,15 @@
     <Compile Include="Assets\Scripts\AirShip.cs" />
     <Compile Include="Assets\Scripts\background.cs" />
     <Compile Include="Assets\Scripts\Background2.cs" />
+    <Compile Include="Assets\Scripts\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Energy.cs" />
+    <Compile Include="Assets\Scripts\EnergyManage.cs" />
+    <Compile Include="Assets\Scripts\EnStarFollow.cs" />
+    <Compile Include="Assets\Scripts\EnStarIn.cs" />
+    <Compile Include="Assets\Scripts\EnStarStandby.cs" />
     <Compile Include="Assets\Scripts\EventSystem.cs" />
     <Compile Include="Assets\Scripts\followBlock.cs" />
     <Compile Include="Assets\Scripts\FSMSystem.cs" />

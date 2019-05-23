@@ -106,8 +106,11 @@ public class Player : MonoBehaviour
     private void energyAutoRecover()
     {
         if(!TimeWatch.isNight)
-            energy.energyIncrease((int)(recoveryPerFrame*Time.deltaTime));
-        Debug.Log(energy.energyHave());
+        {
+            energy.energyIncrease((int)(recoveryPerFrame * Time.deltaTime));
+            Debug.Log(energy.energyHave());
+        }
+
     }
 
 
