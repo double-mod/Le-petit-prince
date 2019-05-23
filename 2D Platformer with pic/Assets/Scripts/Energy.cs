@@ -25,6 +25,10 @@ public class Energy : MonoBehaviour
 
     private energyStat EnergyStat;
 
+    private bool DashInStarry = false;
+
+    private Vector3 velocity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,7 @@ public class Energy : MonoBehaviour
     void Update()
     {
         energyCheck();
+        if (DashInStarry) GetComponent<Rigidbody2D>().velocity = velocity;
     }
 
     public energyStat getThisEnergy()
@@ -47,7 +52,10 @@ public class Energy : MonoBehaviour
     {
         if (EnergyStat.currentCage < 1)
             if ((EnergyStat.currentEnergy += rate) >= 100)
-                EnergyStat.currentCage += 1;     
+            {
+                EnergyStat.currentCage += 1;
+                EnergyStat.currentEnergy = 0;
+            }
     }
     public bool energyUse ()
     {
@@ -87,9 +95,31 @@ public class Energy : MonoBehaviour
                     }
                 }
                 break;
+            case EventSystem.eventType.STARRYLIGHTA:
+                EnergyStat.currentCage = 3;
+                this.GetComponent<Player>().InfinitDash(true);
+                break;
+            case EventSystem.eventType.STARRYLIGHTB:
+                EnergyStat.currentCage = 3;
+                this.GetComponent<Player>().InfinitDash(true);
+                if (GetComponent<Player>().getState() == "Dash" || GetComponent<Player>().getState() == "SuperJump")
+                {
+                    DashInStarry = true;
+                    velocity=GetComponent<Rigidbody2D>().velocity;
+                }
+                break;
+            case EventSystem.eventType.NONE:
+                DashInStarry = false;
+                this.GetComponent<Player>().InfinitDash(false);
+                break;
         }
         //Debug.Log(EnergyStat.currentCage);
         //Debug.Log(EnergyStat.currentEnergy);
+    }
+
+    public int energyHave()
+    {
+        return EnergyStat.currentEnergy;
     }
 
 }

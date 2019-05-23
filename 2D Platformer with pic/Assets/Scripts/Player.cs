@@ -6,6 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Config
+    [SerializeField] bool DashVersion = true;
+
     [SerializeField] [Range(0f, 20f)] float runSpeed = 5f;
     [SerializeField] [Range(0f, 20f)] float jumpHorizonSpeed = 5f;
     [SerializeField] [Range(0f, 200f)] float airAccel = 50f;
@@ -13,6 +15,8 @@ public class Player : MonoBehaviour
     [SerializeField] [Range(0f, 1f)] float jumpReleaseImpression = 0.4f;
     [SerializeField] [Range(0f, 50f)] float DashSpeed = 15f;
     [SerializeField] [Range(0f, 50f)] float DragSpd = 2.5f;
+    [SerializeField] float doubleJumpHeight = 20f;
+    [SerializeField] float recoveryPerFrame=25f;
 
 
     [SerializeField] int energyPoint = 0;
@@ -24,7 +28,10 @@ public class Player : MonoBehaviour
     // State
     int superMode = 0;
     bool canDash = true;
+    bool canAirJump = true;
     bool FlipOn = true;
+
+    [SerializeField] bool infinitDash = false;
 
     // Cached component references
     Rigidbody2D myRigidbody;
@@ -93,9 +100,16 @@ public class Player : MonoBehaviour
         }
         CheckMode();
         CheckLight();
-
-        // energy.energyIncrease(25);
+        energyAutoRecover();
     }
+
+    private void energyAutoRecover()
+    {
+        if(!TimeWatch.isNight)
+            energy.energyIncrease((int)(recoveryPerFrame*Time.deltaTime));
+        Debug.Log(energy.energyHave());
+    }
+
 
     private void LateUpdate()
     {
@@ -161,7 +175,14 @@ public class Player : MonoBehaviour
             myRigidbody.velocity = playerVelocity;
         }
         
-        if (CheckJumpAndFall() || CheckDash())
+        if (DashVersion)
+        {
+            if (CheckDash())
+            {
+                myAnimator.SetBool("Idling", false);
+            }
+        }
+        if (CheckJumpAndFall())
         {
             myAnimator.SetBool("Idling", false);
         }
@@ -203,7 +224,14 @@ public class Player : MonoBehaviour
         {
             // slide...
         }
-        if (CheckJumpAndFall() || CheckDash())
+        if (DashVersion)
+        {
+            if (CheckDash())
+            {
+                myAnimator.SetBool("Running", false);
+            }
+        }
+        if (CheckJumpAndFall())
         {
             myAnimator.SetBool("Running", false);
         }
@@ -234,10 +262,20 @@ public class Player : MonoBehaviour
         }
         myRigidbody.velocity = playerVelocity;
 
-
-        if(CheckLanding() || CheckDash())
+        if(CheckLanding())
         {
             myAnimator.SetBool("Running", false);
+        }
+        if (DashVersion)
+        {
+            if(CheckDash())
+            {
+                myAnimator.SetBool("Running", false);
+            }
+        }
+        else
+        {
+            DoubleJump();
         }
         FlipSprite();
 
@@ -270,24 +308,26 @@ public class Player : MonoBehaviour
         return false;
     }
 
-    //private void DoubleJump()
-    //{
-    //    if (energyPoint >= 1 && myRigidbody.velocity.y < 3.0f && stateMachine.StateName == "Air")
-    //    {
-    //        if (Input.GetButtonDown("Jump"))
-    //        {
-    //            energyPoint--;
-    //            myLight.spotAngle = 150f;
-    //            Vector2 jumpVelocity = new Vector2(myRigidbody.velocity.x, doubleJumpHeight);
-    //            myRigidbody.velocity = jumpVelocity;
-    //        }
-    //    }
-        
-    //}
+    private void DoubleJump()
+    {
+        if (!canAirJump && !infinitDash) return;
+        if (myRigidbody.velocity.y < 3.0f && state == "Air")
+        {
+            if (Input.GetButtonDown("Jump") && energy.energyUse())
+            {
+                this.GetComponent<StarDust>().boost();
+                myLight.spotAngle = 150f;
+                Vector2 jumpVelocity = new Vector2(myRigidbody.velocity.x, doubleJumpHeight);
+                myRigidbody.velocity = jumpVelocity;
+                canAirJump = false;
+            }
+        }
+      
+    }
 
     private bool CheckDash()
     {
-        if (!canDash)
+        if (!canDash && !infinitDash)
         {
             return false;
         }
@@ -377,6 +417,7 @@ public class Player : MonoBehaviour
             || myFeet.IsTouchingLayers(LayerMask.GetMask("untouchable"))) // check landing
         {
             canDash = true;
+            canAirJump = true;
             if (PlayerHasHorizontalSpeed())
             {
                 stateNext = "Walk";
@@ -418,5 +459,10 @@ public class Player : MonoBehaviour
     public string getState()
     {
         return state;
+    }
+
+    public void InfinitDash(bool value)
+    {
+        infinitDash = value;
     }
 }

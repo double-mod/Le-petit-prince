@@ -10,6 +10,15 @@ using UnityEngine;
 
 public class MeshTest : MonoBehaviour
 {
+    //meshAlpha cntrol type
+    public enum MeshAlphaControl
+    {
+        Flash,
+        Smooth
+    }
+    //flash rate
+    public int FlashFrequency = 10;
+    public MeshAlphaControl meshAlphaControl = MeshAlphaControl.Smooth; 
     //mask collor
     public Color color = Color.yellow;
     //mask range
@@ -46,6 +55,8 @@ public class MeshTest : MonoBehaviour
     private Vector2[] uvArray;
 
     private bool colorTrigger = false;
+
+    private float _timeFromLastFlash=0f;
 
 
     void Start()
@@ -95,19 +106,32 @@ public class MeshTest : MonoBehaviour
     {
         Color32[] colors32 = new Color32[mesh.vertices.Length];
 
-        if (colorTrigger)
+        if (meshAlphaControl == MeshAlphaControl.Smooth)
         {
-            if ((color.a += color_offset * Time.deltaTime) > 0.6f)
+            if (colorTrigger)
             {
-                colorTrigger = !colorTrigger;
+                if ((color.a += color_offset * Time.deltaTime) > 0.6f)
+                {
+                    colorTrigger = !colorTrigger;
 
+                }
+            }
+            else
+            {
+                if ((color.a -= color_offset * Time.deltaTime) < 0.4f)
+                {
+                    colorTrigger = !colorTrigger;
+                }
             }
         }
         else
         {
-            if ((color.a -= color_offset * Time.deltaTime) < 0.4f)
+            _timeFromLastFlash += Time.deltaTime;
+
+            if(_timeFromLastFlash>(1f/FlashFrequency))
             {
-                colorTrigger = !colorTrigger;
+                StartCoroutine(flash());
+
             }
         }
 
@@ -198,4 +222,19 @@ public class MeshTest : MonoBehaviour
     {
         return Range;
     }
+
+    IEnumerator flash()
+    {
+        _timeFromLastFlash = 0f;
+        color.a = UnityEngine.Random.Range(0.2f, 0.4f);
+        yield return new WaitForSeconds(0.05f);
+        color.a = UnityEngine.Random.Range(0.2f, 0.4f);
+        yield return new WaitForSeconds(0.05f);
+        color.a = UnityEngine.Random.Range(0.2f, 0.4f);
+        yield return new WaitForSeconds(0.05f);
+        color.a = UnityEngine.Random.Range(0.2f, 0.4f);
+        yield return new WaitForSeconds(0.05f);
+
+    }
+
 }

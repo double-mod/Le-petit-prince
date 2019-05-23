@@ -9,7 +9,9 @@ public class EventSystem : MonoBehaviour
         NONE=0,
         LIGHT=1<<0,
         FOG=1<<1,
-        BOTH=LIGHT|FOG
+        STARRYLIGHTA=1<<2,
+        STARRYLIGHTB = 1 << 3,
+        BOTH =LIGHT|FOG
     }
 
     public GameObject[] eventItem;
@@ -86,7 +88,11 @@ public class EventSystem : MonoBehaviour
                 if ((1<<eventItem[i].layer) == UnityEngine.LayerMask.GetMask("light")&&eventItem[i].activeInHierarchy==true)
                     EventType |= eventType.LIGHT;
                 else if ((1<<eventItem[i].layer) == UnityEngine.LayerMask.GetMask("fog") && eventItem[i].activeInHierarchy == true)
-                    EventType |= eventType.FOG;   
+                    EventType |= eventType.FOG;
+                else if ((1 << eventItem[i].layer) == UnityEngine.LayerMask.GetMask("StarryLightA") && eventItem[i].activeInHierarchy == true)
+                    EventType |= eventType.STARRYLIGHTA;
+                else if ((1 << eventItem[i].layer) == UnityEngine.LayerMask.GetMask("StarryLightB") && eventItem[i].activeInHierarchy == true)
+                    EventType |= eventType.STARRYLIGHTB;
                 //Debug.Log("true");
             }
             bool boo = Physics2D.Raycast(transform.position, direction, Range, layerMaskValue);
