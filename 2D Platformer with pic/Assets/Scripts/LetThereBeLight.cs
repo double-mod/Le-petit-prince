@@ -4,32 +4,23 @@ using UnityEngine;
 
 public class LetThereBeLight : MonoBehaviour
 {
-    public bool testControl = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
+    private bool prev;
     // Update is called once per frame
     void Update()
     {
         LightOnOf();
-        if (testControl == true)
-        {
-            TimeWatch.isNight = !TimeWatch.isNight;
-            testControl = false;
-        }
+        prev = TimeWatch.isNight;
     }
 
     private void LightOnOf()
     {
-        if (GetComponent<TimeWatch>().statIsChanged())
+        if (prev!=TimeWatch.isNight)
         {
             foreach (Transform child in transform)
             {
                 child.gameObject.SetActive(!child.gameObject.activeSelf);
             }
+            prev = TimeWatch.isNight;
         }
     }
 }

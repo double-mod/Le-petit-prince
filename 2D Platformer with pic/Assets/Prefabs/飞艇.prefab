@@ -93,10 +93,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6162f8c0477c8c642aa928c632e17c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 0}
+  - {fileID: 0}
   direction_x: -0.078
   direction_y: 0
   maxScale: 1
-  speed: 0
   Scale: 0
   ScalePerFrame: 1
 --- !u!50 &7969936662077186436

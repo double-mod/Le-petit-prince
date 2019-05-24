@@ -9,13 +9,13 @@ public class PlayerLight : MonoBehaviour
     public float minIntensity;
 
     private TimeWatch timeWatch;
-    private Light light;
+    private Light myLight;
 
     // Start is called before the first frame update
     void Start()
     {
         timeWatch = GetComponent<TimeWatch>();
-        light = GetComponent<Light>();
+        myLight = GetComponent<Light>();
     }
 
     // Update is called once per frame
@@ -36,9 +36,9 @@ public class PlayerLight : MonoBehaviour
 
     IEnumerator minusLight(float intensityChange)
     {
-        while (light.intensity > minIntensity)
+        while (myLight.intensity > minIntensity)
         {
-            light.intensity -= intensityChange;
+            myLight.intensity -= intensityChange;
             yield return new WaitForSeconds(0.05f);
         }
 
@@ -46,9 +46,9 @@ public class PlayerLight : MonoBehaviour
 
     IEnumerator plusLight(float intensityChange)
     {
-        while (light.intensity < maxIntensity)
+        while (myLight.intensity < maxIntensity)
         {
-            light.intensity += intensityChange;
+            myLight.intensity += intensityChange;
             yield return new WaitForSeconds(0.05f);
         }
 

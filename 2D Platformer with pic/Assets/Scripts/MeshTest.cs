@@ -234,6 +234,8 @@ public class MeshTest : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         color.a = UnityEngine.Random.Range(0.2f, 0.4f);
         yield return new WaitForSeconds(0.05f);
+        color.a = UnityEngine.Random.Range(0.2f, 0.4f);
+        yield return new WaitForSeconds(0.05f);
 
     }
 

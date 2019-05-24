@@ -17,7 +17,7 @@ public class CreatePlane : MonoBehaviour
     [SerializeField]
     GameObject planePrefab;
 
-    static public int planeCnt = 3;
+    static public int planeCnt = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +63,24 @@ public class CreatePlane : MonoBehaviour
 
 
             //the sprite
-            plane.GetComponent<SpriteRenderer>().sprite = RandomBool() ? sprites[0] : sprites[1];
+
+            plane.GetComponent<AirShip>().sprites = new Sprite[2];
+
+            if (TimeWatch.isNight)
+            {
+                int i = RandomBool() ? 2 : 3;
+                plane.GetComponent<SpriteRenderer>().sprite =sprites[i];
+                plane.GetComponent<AirShip>().sprites[0] = sprites[i - 2];
+                plane.GetComponent<AirShip>().sprites[1] = sprites[i];
+            }
+            else
+            {
+                int i = RandomBool() ? 0 : 1;
+                plane.GetComponent<SpriteRenderer>().sprite = sprites[i];
+                plane.GetComponent<AirShip>().sprites[0] = sprites[i];
+                plane.GetComponent<AirShip>().sprites[1] = sprites[i+2];
+            }
+
 
             //the Airship variables
             var airship = plane.GetComponent<AirShip>();
@@ -78,7 +95,7 @@ public class CreatePlane : MonoBehaviour
             }
 
             planeCnt++;
-            Debug.Log(planeCnt);
+            //Debug.Log(planeCnt);
 
             yield return new WaitForSeconds(nextPlaneCreateTime);
         }

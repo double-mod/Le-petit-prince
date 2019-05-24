@@ -934,7 +934,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4906,7 +4906,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 4430990993110378372}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 182dcdb5a8dd9fe439b0b6900ceb3268, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4951,15 +4951,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18f33c2467fb824e9ca4b099e04251d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DashVersion: 1
   runSpeed: 7.8
   jumpHorizonSpeed: 8.3
   airAccel: 39
   jumpHeight: 19.6
   jumpReleaseImpression: 0.418
   DashSpeed: 25
+  DragSpd: 2.5
+  doubleJumpHeight: 20
+  recoveryPerFrame: 25
   energyPoint: 3
   energyPointMax: 3
   extraJumpSpeed: {x: 0, y: 0}
+  infinitDash: 0
 --- !u!114 &4430990993110378374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5004,6 +5009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cageCnt: 3
   chargePerFrame: 10
+  decreasePerFrame: 5
   energyPerCage: 100
 --- !u!114 &707653665
 MonoBehaviour:

@@ -9,19 +9,21 @@ public class SunLight : MonoBehaviour
     public float minIntensity;
 
     private TimeWatch timeWatch;
-    private Light light;
+    private Light myLight;
+    private bool prev;
 
     // Start is called before the first frame update
     void Start()
     {
         timeWatch = GetComponent<TimeWatch>();
-        light = GetComponent<Light>();
+        myLight = GetComponent<Light>();
+        prev = TimeWatch.isNight;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timeWatch.statIsChanged())
+        if (prev!=TimeWatch.isNight)
         {
             if (TimeWatch.isNight)
             {
@@ -31,14 +33,15 @@ public class SunLight : MonoBehaviour
             {
                 StartCoroutine(plusLight(intensityChange));
             }
+            prev = TimeWatch.isNight;
         }
     }
 
     IEnumerator minusLight(float intensityChange)
     {
-        while (light.intensity > minIntensity)
+        while (myLight.intensity > minIntensity)
         {
-            light.intensity -= intensityChange;
+            myLight.intensity -= intensityChange;
             yield return new WaitForSeconds(0.05f);
         }
 
@@ -46,9 +49,9 @@ public class SunLight : MonoBehaviour
 
     IEnumerator plusLight(float intensityChange)
     {
-        while (light.intensity < maxIntensity)
+        while (myLight.intensity < maxIntensity)
         {
-            light.intensity += intensityChange;
+            myLight.intensity += intensityChange;
             yield return new WaitForSeconds(0.05f);
         }
 
