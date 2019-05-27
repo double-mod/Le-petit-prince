@@ -5994,6 +5994,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4430990993110378372, guid: a545bb41541c5af42bcf0a05786f410d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4430990992658821598, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6024,7 +6029,7 @@ PrefabInstance:
     - target: {fileID: 4430990993110378393, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}
       propertyPath: recoveryPerFrame
-      value: 74.6
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 4430990992090795670, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}

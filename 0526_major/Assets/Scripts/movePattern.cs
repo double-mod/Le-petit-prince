@@ -70,11 +70,11 @@ public class movePattern : MonoBehaviour
     private void horizontalMov()
     {
         Vector2 moveDistance = new Vector2(Time.deltaTime * spd, 0f);
-        transform.position = new Vector2(transform.position.x + moveDistance.x, transform.position.y + moveDistance.y);
 
-        if (Mathf.Abs(transform.position.x - center.x) >= distance && distance != 0)
+        if (Mathf.Abs(transform.position.x + moveDistance.x - center.x) >= distance && distance != 0)
             shiftFlg = !shiftFlg;
-
+        else
+            transform.position = new Vector2(transform.position.x + moveDistance.x, transform.position.y + moveDistance.y);
     }
 
     private void verticalMov()
@@ -82,8 +82,10 @@ public class movePattern : MonoBehaviour
         Vector2 moveDistance = new Vector2(0f, Time.deltaTime * spd);
         transform.position = new Vector2(transform.position.x + moveDistance.x, transform.position.y + moveDistance.y);
 
-        if (Mathf.Abs(transform.position.y - center.y) >= distance&&distance!=0)
+        if (Mathf.Abs(transform.position.y + moveDistance.y - center.y) >= distance && distance != 0)
             shiftFlg = !shiftFlg;
+        else
+            transform.position = new Vector2(transform.position.x + moveDistance.x, transform.position.y + moveDistance.y);
     }
 
     private void upMov()

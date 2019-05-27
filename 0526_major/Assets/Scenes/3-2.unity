@@ -1855,7 +1855,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86d9203447edad4da93c94856228bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testControl: 0
 --- !u!1001 &441642991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5012,7 +5011,7 @@ PrefabInstance:
     - target: {fileID: 7008786158052272773, guid: 88c95a03363e2fb48bbf30b4a285db93,
         type: 3}
       propertyPath: orthographic size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7008786158319702846, guid: 88c95a03363e2fb48bbf30b4a285db93,
         type: 3}
@@ -8085,7 +8084,7 @@ PrefabInstance:
     - target: {fileID: 4430990993110378393, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}
       propertyPath: recoveryPerFrame
-      value: 74.6
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 4430990993110378393, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}

@@ -244,7 +244,7 @@ public class Player : MonoBehaviour
     {
         if (stateNew)
         {
-            myAnimator.SetBool("Running", true);
+            myAnimator.SetBool("Jumping", true);
         }
         
         float controlThrow = Input.GetAxis("Horizontal"); // -1 ~ +1
@@ -267,13 +267,13 @@ public class Player : MonoBehaviour
 
         if(CheckLanding())
         {
-            myAnimator.SetBool("Running", false);
+            myAnimator.SetBool("Jumping", false);
         }
         if (DashVersion)
         {
             if(CheckDash())
             {
-                myAnimator.SetBool("Running", false);
+                myAnimator.SetBool("Jumping", false);
             }
         }
         else

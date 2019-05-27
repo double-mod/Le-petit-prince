@@ -2774,7 +2774,7 @@ SpriteRenderer:
   m_Size: {x: 40, y: 20}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &882541764
@@ -5017,6 +5017,27 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 1266559206703316885, guid: 22f4fcd2cf9db694a8159241ccaf131a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6dfacc26dc002ae458d586602d87c049,
+        type: 3}
+    - target: {fileID: 1266559206703316885, guid: 22f4fcd2cf9db694a8159241ccaf131a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 38.399998
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266559206703316885, guid: 22f4fcd2cf9db694a8159241ccaf131a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 21.599998
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266559206703316885, guid: 22f4fcd2cf9db694a8159241ccaf131a,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1266559206926892355, guid: 22f4fcd2cf9db694a8159241ccaf131a,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -5026,6 +5047,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266559206926892355, guid: 22f4fcd2cf9db694a8159241ccaf131a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7df4bb9be6d49084091d7f9d106f4427,
+        type: 3}
+    - target: {fileID: 1266559206926892355, guid: 22f4fcd2cf9db694a8159241ccaf131a,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f4fcd2cf9db694a8159241ccaf131a, type: 3}
@@ -6171,6 +6203,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4430990993110378372, guid: a545bb41541c5af42bcf0a05786f410d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4430990992658821598, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6262,6 +6299,11 @@ PrefabInstance:
         type: 3}
       propertyPath: starAmount
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430990993110378393, guid: a545bb41541c5af42bcf0a05786f410d,
+        type: 3}
+      propertyPath: recoveryPerFrame
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 4430990993110378395, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}

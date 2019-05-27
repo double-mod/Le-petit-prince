@@ -82,7 +82,7 @@ public class EventSystem : MonoBehaviour
                 direct = -direct;
             float angle = Vector2.Angle(direct, forwardLocalVect);
 
-            if (Range>=distance && angle<((endAngle-startAngle)/2) && (!Physics2D.Raycast(transform.position, direction, Range, layerMaskValue)))
+            if (Range>=distance && angle<((endAngle-startAngle)/2) && (!Physics2D.Raycast(transform.position, direction, distance, layerMaskValue)))
             {
                 //&& !Physics2D.Raycast(transform.position, direction, Range, layerMaskValue)
                 if ((1<<eventItem[i].layer) == UnityEngine.LayerMask.GetMask("light")&&eventItem[i].activeInHierarchy==true)
@@ -95,7 +95,7 @@ public class EventSystem : MonoBehaviour
                     EventType |= eventType.STARRYLIGHTB;
                 //Debug.Log("true");
             }
-            bool boo = Physics2D.Raycast(transform.position, direction, Range, layerMaskValue);
+            bool boo = Physics2D.Raycast(transform.position, direction, distance, layerMaskValue);
             //Debug.Log(angle);
             Debug.Log(boo);
             //Debug.Log(startAngle);
