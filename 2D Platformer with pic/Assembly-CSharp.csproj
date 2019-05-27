@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\star.cs" />
     <Compile Include="Assets\Scripts\StarDust.cs" />
     <Compile Include="Assets\Scripts\Suck.cs" />
+    <Compile Include="Assets\Scripts\SuckControl.cs" />
     <Compile Include="Assets\Scripts\SunLight.cs" />
     <Compile Include="Assets\Scripts\TimeLine.cs" />
     <Compile Include="Assets\Scripts\TimeWatch.cs" />

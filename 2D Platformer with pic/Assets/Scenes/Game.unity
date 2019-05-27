@@ -10565,6 +10565,119 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 451128955}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1544908524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1544908529}
+  - component: {fileID: 1544908528}
+  - component: {fileID: 1544908527}
+  - component: {fileID: 1544908526}
+  - component: {fileID: 1544908525}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1544908525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544908524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457ac6e92b8409547922a03c6fb0134e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SuckBlock:
+  - {fileID: 1837821815}
+  - {fileID: 1757752658}
+  - {fileID: 1422908986}
+  - {fileID: 864721960}
+  - {fileID: 87334456}
+  SuckPoint: {x: -20.66, y: 5.45, z: 0}
+  suckFrequncy: 0.2
+--- !u!114 &1544908526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544908524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec5c2ba7589d1c4f86de8ff1524489d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1544908527
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544908524}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.08116627, y: 0.64933205}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3506689, y: 6.8439713}
+  m_EdgeRadius: 0
+--- !u!50 &1544908528
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544908524}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!4 &1544908529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544908524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.52, y: 7.46, z: -1.4759798}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1564396323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4631871866877332227, guid: 43201bdf05ac00240a47bdcc60ccbdca,
@@ -10657,26 +10770,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 707653663}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1576412588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576412587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 457ac6e92b8409547922a03c6fb0134e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SuckBlock:
-  - {fileID: 1837821815}
-  - {fileID: 1757752658}
-  - {fileID: 1422908986}
-  - {fileID: 864721960}
-  - {fileID: 87334456}
-  SuckPoint: {x: -26.37, y: 0.91, z: 0}
-  suckFrequncy: 0.2
 --- !u!114 &1576412589 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 707653666, guid: a545bb41541c5af42bcf0a05786f410d,
