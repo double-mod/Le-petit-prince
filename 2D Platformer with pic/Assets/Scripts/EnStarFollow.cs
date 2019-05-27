@@ -17,7 +17,7 @@ public class EnStarFollow : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Vector3 Distance = playerPos.position - animator.transform.position;
+        Vector2 Distance = playerPos.position - animator.transform.position;
 
 
         animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, speed * Distance.magnitude * Time.deltaTime);

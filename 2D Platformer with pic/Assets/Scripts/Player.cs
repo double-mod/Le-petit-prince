@@ -445,7 +445,7 @@ public class Player : MonoBehaviour
             SetFlipStat(true);
         if (PlayerHasHorizontalSpeed()&&FlipOn)
         {
-            transform.localScale = new Vector2(Mathf.Sign(myRigidbody.velocity.x), transform.localScale.y);
+            transform.localScale = new Vector2(Mathf.Sign(myRigidbody.velocity.x)* Mathf.Abs(transform.localScale.x), transform.localScale.y);
         }
     }
 

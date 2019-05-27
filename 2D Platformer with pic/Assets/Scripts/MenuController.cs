@@ -22,4 +22,11 @@ public class MenuController : MonoBehaviour
             menuOption.SetActive(isPaused);
         }
     }
+
+    public void SetPause()
+    {
+        isPaused ^= true;
+        Time.timeScale = isPaused ? 0f : 1f;
+        menuOption.SetActive(isPaused);
+    }
 }
