@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\AirShip.cs" />
     <Compile Include="Assets\Scripts\background.cs" />
     <Compile Include="Assets\Scripts\Background2.cs" />
+    <Compile Include="Assets\Scripts\BlockShake.cs" />
     <Compile Include="Assets\Scripts\BuildingLight.cs" />
     <Compile Include="Assets\Scripts\CreatePlane.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\Scripts\StageSelector.cs" />
     <Compile Include="Assets\Scripts\star.cs" />
     <Compile Include="Assets\Scripts\StarDust.cs" />
+    <Compile Include="Assets\Scripts\Suck.cs" />
     <Compile Include="Assets\Scripts\SunLight.cs" />
     <Compile Include="Assets\Scripts\TimeLine.cs" />
     <Compile Include="Assets\Scripts\TimeWatch.cs" />
