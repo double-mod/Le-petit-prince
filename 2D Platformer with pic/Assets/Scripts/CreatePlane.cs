@@ -86,6 +86,7 @@ public class CreatePlane : MonoBehaviour
             var airship = plane.GetComponent<AirShip>();
             airship.direction_x = pos.x > 0 ? UnityEngine.Random.Range(-1f, 0f) : UnityEngine.Random.Range(0f, 1f);
             airship.direction_y = RandomBool() ? 0 : UnityEngine.Random.Range(-0.5f, 0.5f);
+            airship.GetComponent<SpriteRenderer>().sortingLayerName = "Background";
             plane.transform.localScale = airship.transform.localScale * UnityEngine.Random.Range(0f, 0.8f);
 
             //flip when x is over 0

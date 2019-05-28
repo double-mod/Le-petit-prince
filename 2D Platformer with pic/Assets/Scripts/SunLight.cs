@@ -18,6 +18,14 @@ public class SunLight : MonoBehaviour
         timeWatch = GetComponent<TimeWatch>();
         myLight = GetComponent<Light>();
         prev = TimeWatch.isNight;
+        if (TimeWatch.isNight)
+        {
+            StartCoroutine(minusLight(intensityChange));
+        }
+        else
+        {
+            StartCoroutine(plusLight(intensityChange));
+        }
     }
 
     // Update is called once per frame

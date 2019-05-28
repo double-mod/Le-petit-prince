@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D018D790-A76D-47E2-9D68-193E7D0C20B9}</ProjectGuid>
+    <ProjectGuid>{FE075889-B4C5-C55D-DE0F-DB22609B4477}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\StageSelector.cs" />
     <Compile Include="Assets\Scripts\star.cs" />
     <Compile Include="Assets\Scripts\StarDust.cs" />
+    <Compile Include="Assets\Scripts\StartDaytime.cs" />
     <Compile Include="Assets\Scripts\Suck.cs" />
     <Compile Include="Assets\Scripts\SuckControl.cs" />
     <Compile Include="Assets\Scripts\SunLight.cs" />
@@ -132,25 +133,25 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Cinemachine">
-      <HintPath>C:/Users/双人余/Desktop/小王子/Le-petit-prince/2D Platformer with pic/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>C:/Users/双人余/Desktop/Le-petit-prince-plan/0528_updated/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/双人余/Desktop/小王子/Le-petit-prince/2D Platformer with pic/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/双人余/Desktop/Le-petit-prince-plan/0528_updated/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/双人余/Desktop/小王子/Le-petit-prince/2D Platformer with pic/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/双人余/Desktop/Le-petit-prince-plan/0528_updated/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/双人余/Desktop/小王子/Le-petit-prince/2D Platformer with pic/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/双人余/Desktop/Le-petit-prince-plan/0528_updated/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>C:/Users/双人余/Desktop/小王子/Le-petit-prince/2D Platformer with pic/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>C:/Users/双人余/Desktop/Le-petit-prince-plan/0528_updated/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/双人余/Desktop/小王子/Le-petit-prince/2D Platformer with pic/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/双人余/Desktop/Le-petit-prince-plan/0528_updated/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/双人余/Desktop/小王子/Le-petit-prince/2D Platformer with pic/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/双人余/Desktop/Le-petit-prince-plan/0528_updated/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -354,13 +355,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.12f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/双人余/Desktop/小王子/Le-petit-prince/2D Platformer with pic/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/双人余/Desktop/Le-petit-prince-plan/0528_updated/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/双人余/Desktop/小王子/Le-petit-prince/2D Platformer with pic/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/双人余/Desktop/Le-petit-prince-plan/0528_updated/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/双人余/Desktop/小王子/Le-petit-prince/2D Platformer with pic/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/双人余/Desktop/Le-petit-prince-plan/0528_updated/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.12f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -710,7 +711,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{FD7FB32E-2C11-9D25-FFDC-4B7AD3186FDB}</Project>
+      <Project>{5BB915B3-234F-8108-84F6-20494482E3DD}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>

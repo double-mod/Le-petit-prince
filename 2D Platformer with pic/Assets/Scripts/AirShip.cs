@@ -44,6 +44,12 @@ public class AirShip : MonoBehaviour
         originScale = transform.localScale;
         originPos = transform.position;
         prev = TimeWatch.isNight;
+        if (TimeWatch.isNight)
+        {
+            mySpriteRenderer.sprite = sprites[1];
+        }
+        else
+            mySpriteRenderer.sprite = sprites[0];
     }
 
     // Update is called once per frame

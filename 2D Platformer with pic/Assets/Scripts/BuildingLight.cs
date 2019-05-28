@@ -16,6 +16,7 @@ public class BuildingLight : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(TimeWatch.isNight);
         if (TimeWatch.isNight)
         {
             if (spriteRenderer.color.a > 0)
