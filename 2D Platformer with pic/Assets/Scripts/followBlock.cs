@@ -16,10 +16,11 @@ public class followBlock : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (this.GetComponent<Rigidbody2D>().IsTouchingLayers(LayerMask.GetMask("Player")))
         {
+            Debug.Log("怎么回事");
             collision.gameObject.transform.parent = transform;
         }
     }

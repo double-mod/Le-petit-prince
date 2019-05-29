@@ -34,4 +34,16 @@ public class GameFlowManager : MonoBehaviour
     {
         SceneManager.LoadScene("Title");
     }
+
+    public void LoadTargetScene(string targetScene)
+    {
+        fadePanel.SetTrigger("Fade In");
+        StartCoroutine(FadeToTargetScene(targetScene));
+    }
+
+    IEnumerator FadeToTargetScene(string targetScene)
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(targetScene);
+    }
 }
