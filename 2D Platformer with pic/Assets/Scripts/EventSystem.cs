@@ -97,7 +97,7 @@ public class EventSystem : MonoBehaviour
             }
             bool boo = Physics2D.Raycast(transform.position, direction, distance, layerMaskValue);
             //Debug.Log(angle);
-            Debug.Log(boo);
+            //Debug.Log(boo);
             //Debug.Log(startAngle);
             //Debug.Log(endAngle);
         }

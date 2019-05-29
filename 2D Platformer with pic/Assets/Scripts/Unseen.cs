@@ -44,6 +44,14 @@ public class Unseen : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("star")))
+        {
+            StartCoroutine(visibleForWhile());
+        }
+    }
+
     IEnumerator visibleForWhile()
     {
         for(int cnt=0;cnt<3;cnt++)

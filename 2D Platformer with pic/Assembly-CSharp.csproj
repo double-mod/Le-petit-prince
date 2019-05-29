@@ -60,12 +60,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ClearArea.cs" />
+    <Compile Include="Assets\Animations\Perform\ClockRunBehav.cs" />
     <Compile Include="Assets\Scripts\AirShip.cs" />
     <Compile Include="Assets\Scripts\background.cs" />
     <Compile Include="Assets\Scripts\Background2.cs" />
     <Compile Include="Assets\Scripts\BlockShake.cs" />
     <Compile Include="Assets\Scripts\BuildingLight.cs" />
+    <Compile Include="Assets\Scripts\ClearArea.cs" />
+    <Compile Include="Assets\Scripts\ClearPerform.cs" />
+    <Compile Include="Assets\Scripts\ClearPerformTrigger.cs" />
     <Compile Include="Assets\Scripts\CreatePlane.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Dia Message.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
@@ -74,6 +77,7 @@
     <Compile Include="Assets\Scripts\Dialogue\MassageTrigger.cs" />
     <Compile Include="Assets\Scripts\Dialogue\MessageManager.cs" />
     <Compile Include="Assets\Scripts\Dialogue\MessageTriggerLine.cs" />
+    <Compile Include="Assets\Scripts\EndingConv.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Energy.cs" />
     <Compile Include="Assets\Scripts\EnergyManage.cs" />
@@ -95,6 +99,7 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerLight.cs" />
     <Compile Include="Assets\Scripts\PushPull.cs" />
+    <Compile Include="Assets\Scripts\RotateShip.cs" />
     <Compile Include="Assets\Scripts\SinMove.cs" />
     <Compile Include="Assets\Scripts\SMath.cs" />
     <Compile Include="Assets\Scripts\SpringBed.cs" />
@@ -109,6 +114,7 @@
     <Compile Include="Assets\Scripts\TimeWatch.cs" />
     <Compile Include="Assets\Scripts\Title\TitleAnimationPlayer.cs" />
     <Compile Include="Assets\Scripts\Title\TitleControl.cs" />
+    <Compile Include="Assets\Scripts\TriggerNextFlow.cs" />
     <Compile Include="Assets\Scripts\Unseen.cs" />
     <Compile Include="Assets\Scripts\untouchable.cs" />
     <Compile Include="Assets\Scripts\WishBottle.cs" />

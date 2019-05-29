@@ -43,6 +43,11 @@ public class Energy : MonoBehaviour
         if (DashInStarry) GetComponent<Rigidbody2D>().velocity = velocity;
     }
 
+    public void setDashInStarry(bool a)
+    {
+        DashInStarry = a;
+    }
+
     public energyStat getThisEnergy()
     {
         return EnergyStat;

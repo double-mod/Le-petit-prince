@@ -5,6 +5,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public enum PlayerSoundEffect
+    {
+        RUN,
+        JUMP,
+        DASH,
+        STEP,
+        RECOVER,
+        ABSORBED,
+        NONE,
+    }
+
     // Config
     [SerializeField] bool DashVersion = true;
 
@@ -17,6 +28,7 @@ public class Player : MonoBehaviour
     [SerializeField] [Range(0f, 50f)] float DragSpd = 2.5f;
     [SerializeField] float doubleJumpHeight = 20f;
     [SerializeField] float recoveryPerFrame=25f;
+    [SerializeField] AudioClip[] PlayerSE;
 
 
     [SerializeField] int energyPoint = 0;
@@ -36,9 +48,10 @@ public class Player : MonoBehaviour
     // Cached component references
     Rigidbody2D myRigidbody;
     Animator myAnimator;
-    CapsuleCollider2D myBodyCollider2D;
-    BoxCollider2D myFeet;
+    BoxCollider2D myBodyCollider2D;
+    CapsuleCollider2D myFeet;
     Light myLight;
+    AudioSource myAudioSource;
     // FSMSystem stateMachine;
     SpriteRenderer mySprite;
     Energy energy;
@@ -55,11 +68,12 @@ public class Player : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        myBodyCollider2D = GetComponent<CapsuleCollider2D>();
-        myFeet = GetComponent<BoxCollider2D>();
+        myFeet = GetComponent<CapsuleCollider2D>();
+        myBodyCollider2D = GetComponent<BoxCollider2D>();
         myLight = GetComponentInChildren<Light>();
         mySprite = GetComponent<SpriteRenderer>();
         energy = GetComponent<Energy>();
+        myAudioSource = GetComponent<AudioSource>();
 
         // stateMachine = GetComponent<FSMSystem>();
         // stateMachine.StateCreate("Stand", Stand);
@@ -108,7 +122,7 @@ public class Player : MonoBehaviour
         if(!TimeWatch.isNight)
         {
             energy.energyIncrease((int)(recoveryPerFrame * Time.deltaTime));
-            Debug.Log(energy.energyHave());
+            //Debug.Log(energy.energyHave());
         }
 
     }
@@ -146,13 +160,27 @@ public class Player : MonoBehaviour
 
     private void CheckLight()
     {
-        if (myLight.spotAngle > 40f + superMode * 40f)
+        if (TimeWatch.isNight)
         {
-            myLight.spotAngle -= 50f * Time.deltaTime;
+            if(myLight.intensity<500)
+            {
+                myLight.intensity++;
+            }
+            if (myLight.spotAngle > 40f + superMode * 40f)
+            {
+                myLight.spotAngle -= 50f * Time.deltaTime;
+            }
+            if (myLight.spotAngle < 40f + superMode * 39f)
+            {
+                myLight.spotAngle += 80f * Time.deltaTime;
+            }
         }
-        if (myLight.spotAngle < 40f + superMode * 39f)
+        else
         {
-            myLight.spotAngle += 80f * Time.deltaTime;
+            if(myLight.intensity>200)
+            {
+                myLight.intensity-=2;
+            }
         }
     }
 
@@ -163,6 +191,7 @@ public class Player : MonoBehaviour
             if (stateNew)
             {
                 myAnimator.SetBool("Idling", true);
+                playSound(PlayerSoundEffect.NONE);
             }
         }
         
@@ -187,6 +216,7 @@ public class Player : MonoBehaviour
         }
         if (CheckJumpAndFall())
         {
+            playSound(PlayerSoundEffect.JUMP);
             myAnimator.SetBool("Idling", false);
         }
     }
@@ -197,6 +227,7 @@ public class Player : MonoBehaviour
         if (stateNew)
         {
             myAnimator.SetBool("Running", true);
+            playSound(PlayerSoundEffect.RUN);
         }
 
         if (FlipOn == false)
@@ -212,7 +243,6 @@ public class Player : MonoBehaviour
         
         if (!PlayerHasHorizontalSpeed())
         {
-
             stateNext = "Stand";
             myAnimator.SetBool("Running", false);
         }
@@ -236,6 +266,7 @@ public class Player : MonoBehaviour
         }
         if (CheckJumpAndFall())
         {
+            playSound(PlayerSoundEffect.JUMP);
             myAnimator.SetBool("Running", false);
         }
     }
@@ -293,7 +324,6 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-
             stateNext = "Air";
             Vector2 jumpVelocityToAdd = new Vector2(myRigidbody.velocity.x, jumpHeight);
             myRigidbody.velocity = jumpVelocityToAdd;
@@ -337,6 +367,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Dash") && energy.energyUse())
         {
+            playSound(PlayerSoundEffect.DASH);
+
             this.GetComponent<StarDust>().boost();
             canDash = false;
             float controlH = Input.GetAxis("Horizontal"); // -1 ~ +1
@@ -419,6 +451,7 @@ public class Player : MonoBehaviour
              || myFeet.IsTouchingLayers(LayerMask.GetMask("unseen"))
             || myFeet.IsTouchingLayers(LayerMask.GetMask("untouchable"))) // check landing
         {
+            playSound(PlayerSoundEffect.STEP);
             canDash = true;
             canAirJump = true;
             if (PlayerHasHorizontalSpeed())
@@ -449,6 +482,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void playSound(PlayerSoundEffect sound)
+    {
+        myAudioSource.Stop();
+        if(sound!=PlayerSoundEffect.NONE)   myAudioSource.PlayOneShot(PlayerSE[(int)sound]);
+    }
+
     public void SetFlipStat(bool stat)
     {
         FlipOn = stat;
@@ -467,5 +506,13 @@ public class Player : MonoBehaviour
     public void InfinitDash(bool value)
     {
         infinitDash = value;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(GetComponent<EventSystem>().getEventTYpe()==EventSystem.eventType.STARRYLIGHTB)
+        {
+            GetComponent<Energy>().setDashInStarry(false);
+        }
     }
 }
