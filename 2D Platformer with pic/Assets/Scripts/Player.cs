@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     BoxCollider2D myBodyCollider2D;
     CapsuleCollider2D myFeet;
     Light myLight;
-    AudioSource myAudioSource;
+    AudioSource[] myAudioSource;
     // FSMSystem stateMachine;
     SpriteRenderer mySprite;
     Energy energy;
@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
         myLight = GetComponentInChildren<Light>();
         mySprite = GetComponent<SpriteRenderer>();
         energy = GetComponent<Energy>();
-        myAudioSource = GetComponent<AudioSource>();
+        myAudioSource = GetComponents<AudioSource>();
 
         // stateMachine = GetComponent<FSMSystem>();
         // stateMachine.StateCreate("Stand", Stand);
@@ -484,8 +484,8 @@ public class Player : MonoBehaviour
 
     private void playSound(PlayerSoundEffect sound)
     {
-        myAudioSource.Stop();
-        if(sound!=PlayerSoundEffect.NONE)   myAudioSource.PlayOneShot(PlayerSE[(int)sound]);
+        myAudioSource[0].Stop();
+        if(sound!=PlayerSoundEffect.NONE)   myAudioSource[0].PlayOneShot(PlayerSE[(int)sound]);
     }
 
     public void SetFlipStat(bool stat)

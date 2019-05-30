@@ -18,6 +18,8 @@ public class EventSystem : MonoBehaviour
 
     public LayerMask[] LayerMask;
 
+    public bool _eventChanged = false;
+
     private int layerMaskValue;
 
     private Vector3 direction;
@@ -26,15 +28,23 @@ public class EventSystem : MonoBehaviour
 
     private eventType EventType=eventType.NONE;
 
+    private eventType prevType;
+
     // Start is called before the first frame update
     void Start()
     {
+        prevType = EventType;
+
         SetLayerMaskValue(LayerMask);
     }
 
     private void Update()
     {
         checkEvent();
+
+        _eventChanged = (prevType != EventType);
+
+        prevType = EventType;
     }
 
     private void SetLayerMaskValue(LayerMask[] layerMask)
@@ -47,19 +57,7 @@ public class EventSystem : MonoBehaviour
     }
 
     public void checkEvent()
-    {
-        //for(int i=0;i<eventItem.Length;i++)
-        //{
-        //    direction = eventItem[i].transform.position - transform.position;
-        //    float distance = Vector3.Distance(eventItem[i].transform.position, transform.position);
-        //    Range = eventItem[i].GetComponent<meshTest>().retRange();
-        //    //when hit before hit happen
-        //    if (Physics2D.Raycast(transform.position, direction, Range, layerMaskValue)) 
-        //    {
-        //        Debug.Log("false");
-        //    }
-        //}
-        
+    {     
         //refresh the data every frame
         EventType = eventType.NONE;
         for(int i = 0; i < eventItem.Length; i++)
@@ -110,4 +108,9 @@ public class EventSystem : MonoBehaviour
     {
         return EventType;
     }
+
+    //public bool eventChanged()
+    //{
+    //    return prevType != EventType;
+    //}
 }

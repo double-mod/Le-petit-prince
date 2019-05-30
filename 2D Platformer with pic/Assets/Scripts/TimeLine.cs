@@ -8,6 +8,7 @@ public class TimeLine : MonoBehaviour
     {
         if(this.GetComponent<Rigidbody2D>().IsTouchingLayers(LayerMask.GetMask("Player")))
         {
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
             TimeWatch.isNight = !TimeWatch.isNight;
             Destroy(this.gameObject);
         }

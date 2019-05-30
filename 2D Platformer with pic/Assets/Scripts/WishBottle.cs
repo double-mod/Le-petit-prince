@@ -16,6 +16,7 @@ public class WishBottle : MonoBehaviour
     {
         if (this.GetComponent<Rigidbody2D>().IsTouchingLayers(LayerMask.GetMask("Player"))&&on==false)
         {
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
             this.GetComponent<StarDust>().boost();
             Debug.Log("boost");
             StartCoroutine(pause());

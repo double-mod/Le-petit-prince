@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Energy : MonoBehaviour
 {
+    public enum EventSoundEffect
+    {
+        CHARGE,
+        ABSORB,
+        NONE
+    }
+
+
     public struct energyStat
     {
         public int currentCage;
@@ -23,22 +31,32 @@ public class Energy : MonoBehaviour
     [SerializeField]
     private int energyPerCage=100;
 
+    [SerializeField]
+    AudioClip[] EventSE;
+
     private energyStat EnergyStat;
 
     private bool DashInStarry = false;
 
     private Vector3 velocity;
 
+    private EventSystem eventSystem;
+
+    private AudioSource[] myAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         EnergyStat.currentCage = 0;
         EnergyStat.currentEnergy = 0;
+        eventSystem = GetComponent<EventSystem>();
+        myAudioSource = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        energySound();
         energyCheck();
         if (DashInStarry) GetComponent<Rigidbody2D>().velocity = velocity;
     }
@@ -77,7 +95,7 @@ public class Energy : MonoBehaviour
 
     private void energyCheck()
     {
-        switch (this.GetComponent<EventSystem>().getEventTYpe())
+        switch (eventSystem.getEventTYpe())
         {
             case EventSystem.eventType.LIGHT:
                 if(EnergyStat.currentCage<cageCnt)
@@ -120,6 +138,30 @@ public class Energy : MonoBehaviour
         }
         //Debug.Log(EnergyStat.currentCage);
         //Debug.Log(EnergyStat.currentEnergy);
+    }
+
+    private void energySound()
+    {
+        if(eventSystem._eventChanged)
+        {
+            if(EnergyStat.currentCage < cageCnt&&(eventSystem.getEventTYpe()==EventSystem.eventType.LIGHT
+                || eventSystem.getEventTYpe() == EventSystem.eventType.STARRYLIGHTA
+                || eventSystem.getEventTYpe() == EventSystem.eventType.STARRYLIGHTB))
+            {
+                playSound(EventSoundEffect.CHARGE);
+            }
+            else if(EnergyStat.currentCage >0 &&
+                eventSystem.getEventTYpe() == EventSystem.eventType.FOG)
+            {
+                playSound(EventSoundEffect.ABSORB);
+            }
+        }
+    }
+
+    private void playSound(EventSoundEffect sound)
+    {
+        //myAudioSource.Stop();
+        if (sound != EventSoundEffect.NONE) myAudioSource[1].PlayOneShot(EventSE[(int)sound]);
     }
 
     public int energyHave()

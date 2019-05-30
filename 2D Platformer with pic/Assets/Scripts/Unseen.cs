@@ -24,6 +24,7 @@ public class Unseen : MonoBehaviour
     {
         if(myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
             StartCoroutine(visibleForWhile());
         }
     }
@@ -32,6 +33,7 @@ public class Unseen : MonoBehaviour
     {
         if (myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("Player"))&&collision.gameObject.GetComponent<Player>().getState()=="Walk")
         {
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
             StartCoroutine(visibleForWhile());
         }
     }
