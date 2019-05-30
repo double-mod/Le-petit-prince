@@ -1409,7 +1409,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b5e844bc1cd8dd94fb58e2fe6b8eb96a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.18
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4428,11 +4428,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7754942551707951817, guid: 5309a5a409431934bbd7147f32dade91,
-        type: 3}
-      propertyPath: energy
-      value: 
-      objectReference: {fileID: 724728478}
     - target: {fileID: 1084044394978326066, guid: 5309a5a409431934bbd7147f32dade91,
         type: 3}
       propertyPath: m_Name
@@ -4494,6 +4489,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1084044394978326064, guid: 5309a5a409431934bbd7147f32dade91,
+        type: 3}
+      propertyPath: energy
+      value: 
+      objectReference: {fileID: 724728478}
+    - target: {fileID: 7754942551707951817, guid: 5309a5a409431934bbd7147f32dade91,
         type: 3}
       propertyPath: energy
       value: 
@@ -4659,53 +4659,6 @@ MonoBehaviour:
   spd: 2
   distance: 1
   followblock: {fileID: 0}
---- !u!61 &1495729627
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495729625}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.13558272, y: 0.42905518}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.024, y: 1.02}
-    newSize: {x: 1.024, y: 1.02}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.10649288, y: 0.07584518}
-  m_EdgeRadius: 0
---- !u!50 &1495729628
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495729625}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!1 &1510465352
 GameObject:
   m_ObjectHideFlags: 0
@@ -5229,7 +5182,7 @@ PrefabInstance:
     - target: {fileID: 2673410580852539043, guid: 05e43072aaf09174b84a892985b0a209,
         type: 3}
       propertyPath: Range
-      value: 2.79
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2673410580852539042, guid: 05e43072aaf09174b84a892985b0a209,
         type: 3}
@@ -6497,6 +6450,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4430990993110378394, guid: a545bb41541c5af42bcf0a05786f410d,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 39eadad183dc872439ac75baa6e59a29, type: 2}
+    - target: {fileID: 4430990993110378394, guid: a545bb41541c5af42bcf0a05786f410d,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430990993110378394, guid: a545bb41541c5af42bcf0a05786f410d,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430990993110378395, guid: a545bb41541c5af42bcf0a05786f410d,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 39eadad183dc872439ac75baa6e59a29, type: 2}
     - target: {fileID: 4430990993110378393, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}
       propertyPath: recoveryPerFrame
@@ -6543,26 +6516,6 @@ PrefabInstance:
       propertyPath: eventItem.Array.data[7]
       value: 
       objectReference: {fileID: 1815621563}
-    - target: {fileID: 4430990993110378394, guid: a545bb41541c5af42bcf0a05786f410d,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 39eadad183dc872439ac75baa6e59a29, type: 2}
-    - target: {fileID: 4430990993110378394, guid: a545bb41541c5af42bcf0a05786f410d,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 4430990993110378394, guid: a545bb41541c5af42bcf0a05786f410d,
-        type: 3}
-      propertyPath: m_LinearDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4430990993110378395, guid: a545bb41541c5af42bcf0a05786f410d,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 39eadad183dc872439ac75baa6e59a29, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a545bb41541c5af42bcf0a05786f410d, type: 3}
 --- !u!1 &2140898599

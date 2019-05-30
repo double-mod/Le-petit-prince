@@ -646,11 +646,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 837780134}
     m_Modifications:
-    - target: {fileID: 4631871866877332225, guid: 43201bdf05ac00240a47bdcc60ccbdca,
-        type: 3}
-      propertyPath: m_Name
-      value: Time (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 4631871866877332227, guid: 43201bdf05ac00240a47bdcc60ccbdca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -705,6 +700,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631871866877332225, guid: 43201bdf05ac00240a47bdcc60ccbdca,
+        type: 3}
+      propertyPath: m_Name
+      value: Time (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43201bdf05ac00240a47bdcc60ccbdca, type: 3}
@@ -809,11 +809,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 837780134}
     m_Modifications:
-    - target: {fileID: 4631871866877332225, guid: 43201bdf05ac00240a47bdcc60ccbdca,
-        type: 3}
-      propertyPath: m_Name
-      value: Time (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 4631871866877332227, guid: 43201bdf05ac00240a47bdcc60ccbdca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -868,6 +863,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631871866877332225, guid: 43201bdf05ac00240a47bdcc60ccbdca,
+        type: 3}
+      propertyPath: m_Name
+      value: Time (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43201bdf05ac00240a47bdcc60ccbdca, type: 3}
@@ -2379,7 +2379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FlashFrequency: 1
-  meshAlphaControl: 1
+  meshAlphaControl: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   Range: 200
   color_offset: 0.2
@@ -3237,10 +3237,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 707653666, guid: a545bb41541c5af42bcf0a05786f410d, type: 3}
-      propertyPath: chargePerFrame
-      value: 75
-      objectReference: {fileID: 0}
     - target: {fileID: 4430990992658821598, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3310,6 +3306,10 @@ PrefabInstance:
         type: 3}
       propertyPath: starAmount
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 707653666, guid: a545bb41541c5af42bcf0a05786f410d, type: 3}
+      propertyPath: chargePerFrame
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 707653665, guid: a545bb41541c5af42bcf0a05786f410d, type: 3}
       propertyPath: eventItem.Array.size

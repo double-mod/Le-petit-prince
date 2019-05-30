@@ -232,11 +232,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1622692734}
     m_Modifications:
-    - target: {fileID: 4631871866877332225, guid: 43201bdf05ac00240a47bdcc60ccbdca,
-        type: 3}
-      propertyPath: m_Name
-      value: Time (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 4631871866877332227, guid: 43201bdf05ac00240a47bdcc60ccbdca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -292,6 +287,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4631871866877332225, guid: 43201bdf05ac00240a47bdcc60ccbdca,
+        type: 3}
+      propertyPath: m_Name
+      value: Time (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43201bdf05ac00240a47bdcc60ccbdca, type: 3}
 --- !u!4 &45563726
@@ -315,6 +315,102 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 882522858}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &50495955
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50495954}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 47faf047878a149449f9cff1434bb319, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.18
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &53823435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -854,16 +950,16 @@ PrefabInstance:
       propertyPath: energy
       value: 
       objectReference: {fileID: 1405080625}
-    - target: {fileID: 7754942551707951817, guid: 5309a5a409431934bbd7147f32dade91,
-        type: 3}
-      propertyPath: energy
-      value: 
-      objectReference: {fileID: 1405080625}
     - target: {fileID: 7754942551707951816, guid: 5309a5a409431934bbd7147f32dade91,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7754942551707951817, guid: 5309a5a409431934bbd7147f32dade91,
+        type: 3}
+      propertyPath: energy
+      value: 
+      objectReference: {fileID: 1405080625}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5309a5a409431934bbd7147f32dade91, type: 3}
 --- !u!1 &114581955
@@ -3543,7 +3639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FlashFrequency: 1
-  meshAlphaControl: 1
+  meshAlphaControl: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   Range: 50
   color_offset: 0.2
@@ -4083,7 +4179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FlashFrequency: 1
-  meshAlphaControl: 1
+  meshAlphaControl: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   Range: 5
   color_offset: 0.2
@@ -6730,11 +6826,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1622692734}
     m_Modifications:
-    - target: {fileID: 4631871866877332225, guid: 43201bdf05ac00240a47bdcc60ccbdca,
-        type: 3}
-      propertyPath: m_Name
-      value: Time (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 4631871866877332227, guid: 43201bdf05ac00240a47bdcc60ccbdca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6789,6 +6880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631871866877332225, guid: 43201bdf05ac00240a47bdcc60ccbdca,
+        type: 3}
+      propertyPath: m_Name
+      value: Time (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43201bdf05ac00240a47bdcc60ccbdca, type: 3}
@@ -9731,6 +9827,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cameras
       objectReference: {fileID: 0}
+    - target: {fileID: 7008786156405951543, guid: 88c95a03363e2fb48bbf30b4a285db93,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 616419530}
     - target: {fileID: 7008786156624037147, guid: 88c95a03363e2fb48bbf30b4a285db93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9801,11 +9902,6 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 7008786156405951543, guid: 88c95a03363e2fb48bbf30b4a285db93,
-        type: 3}
-      propertyPath: m_Follow
-      value: 
-      objectReference: {fileID: 616419530}
     - target: {fileID: 7008786158319702846, guid: 88c95a03363e2fb48bbf30b4a285db93,
         type: 3}
       propertyPath: m_Follow
@@ -10538,6 +10634,12 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.028
       objectReference: {fileID: 0}
+    - target: {fileID: 4218915353496456970, guid: 6d25e541750495f45b265acc893b3429,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300006, guid: 170eac0513954e84db0581d0321dcea9,
+        type: 3}
     - target: {fileID: 6964318202114201646, guid: 6d25e541750495f45b265acc893b3429,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10553,12 +10655,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4218915353496456970, guid: 6d25e541750495f45b265acc893b3429,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300006, guid: 170eac0513954e84db0581d0321dcea9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d25e541750495f45b265acc893b3429, type: 3}
 --- !u!1 &954299741
@@ -96468,7 +96564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FlashFrequency: 1
-  meshAlphaControl: 1
+  meshAlphaControl: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   Range: 150
   color_offset: 0.2
@@ -98547,10 +98643,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 707653666, guid: a545bb41541c5af42bcf0a05786f410d, type: 3}
-      propertyPath: chargePerFrame
-      value: 75
-      objectReference: {fileID: 0}
     - target: {fileID: 4430990992658821598, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98606,6 +98698,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4430990993110378393, guid: a545bb41541c5af42bcf0a05786f410d,
+        type: 3}
+      propertyPath: DragSpd
+      value: 5.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430990993110378393, guid: a545bb41541c5af42bcf0a05786f410d,
+        type: 3}
+      propertyPath: recoveryPerFrame
+      value: 74.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430990993110378393, guid: a545bb41541c5af42bcf0a05786f410d,
+        type: 3}
+      propertyPath: infinitDash
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430990993110378375, guid: a545bb41541c5af42bcf0a05786f410d,
+        type: 3}
+      propertyPath: starAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 707653666, guid: a545bb41541c5af42bcf0a05786f410d, type: 3}
+      propertyPath: chargePerFrame
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 707653665, guid: a545bb41541c5af42bcf0a05786f410d, type: 3}
       propertyPath: eventItem.Array.size
       value: 5
@@ -98642,26 +98758,6 @@ PrefabInstance:
       propertyPath: eventItem.Array.data[7]
       value: 
       objectReference: {fileID: 444446289}
-    - target: {fileID: 4430990993110378393, guid: a545bb41541c5af42bcf0a05786f410d,
-        type: 3}
-      propertyPath: DragSpd
-      value: 5.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4430990993110378393, guid: a545bb41541c5af42bcf0a05786f410d,
-        type: 3}
-      propertyPath: recoveryPerFrame
-      value: 74.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4430990993110378393, guid: a545bb41541c5af42bcf0a05786f410d,
-        type: 3}
-      propertyPath: infinitDash
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4430990993110378375, guid: a545bb41541c5af42bcf0a05786f410d,
-        type: 3}
-      propertyPath: starAmount
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4430990991402817286, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}
       propertyPath: m_Intensity
@@ -101435,7 +101531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FlashFrequency: 1
-  meshAlphaControl: 1
+  meshAlphaControl: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   Range: 150
   color_offset: 0.2
