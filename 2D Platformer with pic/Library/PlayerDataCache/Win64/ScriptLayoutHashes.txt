@@ -1,8 +1,19 @@
 Win64
 PlayerPath?
-C:/Users/双人余/Desktop/新建文件夹/2D Platformer.exe
+C:/Users/LI CHANGRUI/Desktop/Le-petit-princekk/2D Platformer with pic/BUILDSADJDOP/2D Platformer.exe
 SceneListBegin?
+Assets/Scenes/Title.unity
+Assets/Scenes/1-1.unity
 Assets/Scenes/1-2.unity
+Assets/Scenes/1-3.unity
+Assets/Scenes/2-1.unity
+Assets/Scenes/2-2.unity
+Assets/Scenes/2-3.unity
+Assets/Scenes/3-1.unity
+Assets/Scenes/3-2.unity
+Assets/Scenes/3-3.unity
+Assets/Scenes/3-4.unity
+Assets/Scenes/3-5.unity
 SceneListEnd?
 23d669c8bf2983ca4a3df160658318a6 Cinemachine.dll:Cinemachine.CinemachineStateDrivenCamera
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -236,7 +247,7 @@ edf768c77590547e20152aa892a82707 Assembly-CSharp.dll:.MeshTest
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 bd4172834316ccbee88e1f8bc53bf33e Assembly-CSharp.dll:.CreatePlane
 6ff1c52123c50b3d73f35cd0e2e65dfd Cinemachine.dll:Cinemachine.CinemachineSmoothPath
-fe6e3872a976f0e9fdeae70f775c3275 Assembly-CSharp.dll:.ClearPerform
+275749982a0471fdddf5d41830449261 Assembly-CSharp.dll:.ClearPerform
 71bb6a6b6c8f052f948db64c7dd3ca4f Cinemachine.dll:Cinemachine.CinemachineHardLookAt
 29458a9299b84146a4a02fd02a205b03 Assembly-CSharp.dll:.background
 4254f7f426b4f6a7ffc395f7484e2186 Assembly-CSharp.dll:.StageSelector
@@ -258,3 +269,17 @@ c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 2792936179724025482dc04d68a47ca7 Cinemachine.dll:Cinemachine.CinemachineClearShot
 1b604c7072eb752071aedfd4bbc80ade Assembly-CSharp.dll:.StarDust
 c0ff70810d3ae1908ab722e356599320 Assembly-CSharp.dll:.FSMSystem
+e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
+1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
+eafb77726b67b7571818a7210a3ce11e UnityEngine.Networking.dll:UnityEngine.Networking.NetworkIdentity
+265cf27ba050d55ff33a8acab4ded6c0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkLobbyManager
+5bd9a19c7b5f76c563418e28f48a561b UnityEngine.Networking.dll:UnityEngine.Networking.NetworkLobbyPlayer
+21e871d89bbce53c038fc75ad1b7c7f3 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkManager
+e0ee4b3d4e27318934cc940a969d3d96 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkManagerHUD
+318c6c13a19c9fac98135ae14889de1b UnityEngine.Networking.dll:UnityEngine.Networking.NetworkMigrationManager
+3f0b469d844365c00a63de0437c9b29e UnityEngine.Networking.dll:UnityEngine.Networking.NetworkProximityChecker
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkStartPosition
+ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
+9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
+5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer

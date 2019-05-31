@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 6.9000244, y: 0}
-  m_SizeDelta: {x: 318.2, y: 100}
+  m_AnchoredPosition: {x: 0.000015259, y: -5.6}
+  m_SizeDelta: {x: 220.6, y: 63.8}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &830990880341144956
 CanvasRenderer:
@@ -66,19 +66,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f87a8490b5108784aa6a50185684a497, type: 3}
+    m_Font: {fileID: 12800000, guid: 3a9457bbf3ec4f44ba597733def96cd2, type: 3}
     m_FontSize: 29
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 55
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u738B\u7684\u7537\u4EBASunny"
+  m_Text: "\u738B\u7684\u7537\u4EBAny"
 --- !u!1 &830990880440599224
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f87a8490b5108784aa6a50185684a497, type: 3}
+    m_Font: {fileID: 12800000, guid: 3a9457bbf3ec4f44ba597733def96cd2, type: 3}
     m_FontSize: 34
     m_FontStyle: 0
     m_BestFit: 0
@@ -283,8 +283,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3d8675433a508ec47b8f895201eacf20, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: bfd0c9beb8280db4f9c6e29a4c9bddbd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
