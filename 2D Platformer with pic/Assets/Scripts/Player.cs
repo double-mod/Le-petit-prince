@@ -378,7 +378,7 @@ public class Player : MonoBehaviour
             aimDir.y = Mathf.Abs(controlV) > 0.35f ? Mathf.Sign(controlV) : 0f;
             if (aimDir == new Vector2(0,0))
             {
-                aimDir.x = transform.localScale.x;
+                aimDir.y = 1f;
             }
 
             // energyPoint--;
