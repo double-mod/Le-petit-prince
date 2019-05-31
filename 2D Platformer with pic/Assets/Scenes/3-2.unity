@@ -5736,7 +5736,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300006, guid: 170eac0513954e84db0581d0321dcea9,
+      objectReference: {fileID: 21300000, guid: 6245f7b98cf4aed4780f7fdfba6de93c,
         type: 3}
     - target: {fileID: 3952171052350939526, guid: 7c0f186780acdc14fb0937a76e78c054,
         type: 3}
@@ -7483,6 +7483,16 @@ PrefabInstance:
       propertyPath: followblock
       value: 
       objectReference: {fileID: 8968295811766869964}
+    - target: {fileID: 6964318202114201646, guid: 6d25e541750495f45b265acc893b3429,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964318202114201646, guid: 6d25e541750495f45b265acc893b3429,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.029
+      objectReference: {fileID: 0}
     - target: {fileID: 7244698600383874509, guid: 6d25e541750495f45b265acc893b3429,
         type: 3}
       propertyPath: m_Sprite
@@ -7505,16 +7515,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300006, guid: 170eac0513954e84db0581d0321dcea9,
         type: 3}
-    - target: {fileID: 6964318202114201646, guid: 6d25e541750495f45b265acc893b3429,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.003
-      objectReference: {fileID: 0}
-    - target: {fileID: 6964318202114201646, guid: 6d25e541750495f45b265acc893b3429,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.029
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d25e541750495f45b265acc893b3429, type: 3}
 --- !u!1001 &1940417125
@@ -8413,6 +8413,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 707653666, guid: a545bb41541c5af42bcf0a05786f410d, type: 3}
+      propertyPath: chargePerFrame
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 4430990992658821598, guid: a545bb41541c5af42bcf0a05786f410d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8487,10 +8491,6 @@ PrefabInstance:
         type: 3}
       propertyPath: starAmount
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 707653666, guid: a545bb41541c5af42bcf0a05786f410d, type: 3}
-      propertyPath: chargePerFrame
-      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 707653665, guid: a545bb41541c5af42bcf0a05786f410d, type: 3}
       propertyPath: eventItem.Array.size
